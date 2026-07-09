@@ -31,6 +31,7 @@
     <meta name="twitter:title" content="오션페루 | 페루산 우니 상세 안내">
     <meta name="twitter:description" content="페루 현지 자체 공장에서 엄선·가공한 우니를 항공으로 빠르게 운송하고 직접 전달합니다.">
     <meta name="twitter:image" content="https://oceanperu-uni-detail-page.pages.dev/assets/web/oceanperu-og-thumbnail.jpg">
+    <link rel="me" href="https://www.instagram.com/oceanperu_official/">
     <style>
       :root{
       --navy:#073b63;--navy-deep:#042844;--blue:#1684b6;--sky:#eaf7fc;--sky2:#f5fbfd;
@@ -49,6 +50,7 @@
       .brand{display:flex;align-items:center;gap:12px}.brand img{width:52px;height:52px;object-fit:contain}.brand strong{display:block;color:var(--navy);font-size:15px;letter-spacing:.04em}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:.12em}
       .nav{display:flex;align-items:center;gap:16px;font-size:12px;font-weight:800;color:#486273}.nav a:hover{color:var(--blue)}
       .nav-site{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border:1px solid rgba(7,59,99,.16);border-radius:999px;background:#fff;color:var(--navy)!important}
+      .nav-instagram{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 14px;border-radius:999px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff!important;box-shadow:0 8px 20px rgba(129,52,175,.14)}
       .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0 15px;border-radius:999px;background:#fee500;color:#251d00!important;box-shadow:0 8px 20px rgba(73,62,0,.12)}
       .hero{min-height:720px;display:grid;grid-template-columns:1.02fr .98fr;background:radial-gradient(circle at 78% 25%,rgba(255,255,255,.95) 0 19%,transparent 43%),linear-gradient(135deg,#edf9fd 0%,#dbeef5 100%);position:relative;overflow:hidden}
       .hero::after{content:"";position:absolute;right:-130px;bottom:-210px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(7,59,99,.08)}
@@ -71,7 +73,8 @@
       .process{background:#fff}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.process-card{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 14px 36px rgba(7,59,99,.06)}.process-photo{height:250px;background:#eef4f7;overflow:hidden}.process-photo img{width:100%;height:100%;object-fit:cover}.process-body{padding:19px}.process-no{font-size:10px;color:var(--orange-deep);font-weight:900;letter-spacing:.14em;margin-bottom:5px}.process-body h3{font-size:17px;color:var(--navy);margin-bottom:5px}.process-body p{font-size:12.5px;color:var(--muted)}.process-foot{margin-top:24px;padding:17px 20px;border-radius:16px;background:#eef8fc;border:1px solid #cde5ef;color:#456779;font-size:13px}
       .menu{background:linear-gradient(180deg,#eef8fc,#fff)}.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.menu-card{background:#fff;border:1px solid rgba(7,59,99,.1);border-radius:26px;overflow:hidden;box-shadow:0 14px 38px rgba(7,59,99,.08);transition:transform .25s ease}.menu-card:hover{transform:translateY(-5px)}.menu-photo{height:310px;overflow:hidden;background:#edf2f4}.menu-photo img{width:100%;height:100%;object-fit:cover}.menu-body{padding:23px}.menu-body small{display:block;color:var(--orange-deep);font-size:10px;font-weight:900;letter-spacing:.13em;margin-bottom:5px}.menu-body h3{font-size:21px;color:var(--navy);margin-bottom:7px}.menu-body p{font-size:13px;color:var(--muted)}
       .manual{background:var(--navy-deep);color:#fff}.manual-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}.manual .section-label{color:#8fd5e9}.manual .section-label::before{background:#8fd5e9}.manual .section-title{color:#fff}.manual .section-desc{color:rgba(255,255,255,.68)}.temps{display:flex;gap:10px;flex-wrap:wrap;margin:23px 0}.temp{padding:10px 13px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:12px;font-weight:900}.manual-card{padding:30px;border-radius:25px;background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.14)}.manual-card strong{display:block;font-size:21px;margin-bottom:8px}.manual-card p{font-size:13px;color:rgba(255,255,255,.68);margin-bottom:18px}.manual-link{display:inline-flex;padding:12px 17px;border-radius:13px;background:#fff;color:var(--navy);font-size:13px;font-weight:900}
-      .contact{background:#fff}.contact-card{display:grid;grid-template-columns:240px 1fr;gap:38px;align-items:center;padding:34px;border-radius:30px;background:linear-gradient(135deg,#073b63,#0b6f9e);color:#fff;box-shadow:var(--shadow)}.qr{background:#fff;border-radius:20px;padding:15px}.qr img{width:100%;aspect-ratio:1;object-fit:contain}.contact-copy small{display:block;color:#9eddf0;font-size:10px;font-weight:900;letter-spacing:.15em;margin-bottom:8px}.contact-copy h2{font-size:clamp(28px,3.5vw,43px);line-height:1.25;letter-spacing:-.045em;margin-bottom:12px}.contact-copy p{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:22px}.kakao-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:14px;background:#fee500;color:#271f00;font-size:13px;font-weight:900}.channel-code{margin-top:12px;font-size:11px;color:rgba(255,255,255,.58)}
+      .contact{background:#fff}.contact-card{display:grid;grid-template-columns:240px 1fr;gap:38px;align-items:center;padding:34px;border-radius:30px;background:linear-gradient(135deg,#073b63,#0b6f9e);color:#fff;box-shadow:var(--shadow)}.qr{background:#fff;border-radius:20px;padding:15px}.qr img{width:100%;aspect-ratio:1;object-fit:contain}.contact-copy small{display:block;color:#9eddf0;font-size:10px;font-weight:900;letter-spacing:.15em;margin-bottom:8px}.contact-copy h2{font-size:clamp(28px,3.5vw,43px);line-height:1.25;letter-spacing:-.045em;margin-bottom:12px}.contact-copy p{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:22px}.kakao-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:14px;background:#fee500;color:#271f00;font-size:13px;font-weight:900}
+      .contact-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.instagram-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:14px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff;font-size:13px;font-weight:900;box-shadow:0 10px 22px rgba(129,52,175,.16)}.channel-code{margin-top:12px;font-size:11px;color:rgba(255,255,255,.58)}
       .info{background:var(--soft)}.info-table{width:100%;border-collapse:collapse;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 12px 32px rgba(7,59,99,.06)}.info-table th,.info-table td{padding:15px 18px;border-bottom:1px solid var(--line);text-align:left;font-size:14px}.info-table th{width:30%;background:#f9fcfd;color:var(--navy)}.info-table td{color:#435b69}.info-table tr:last-child th,.info-table tr:last-child td{border-bottom:0}
       footer{padding:38px clamp(22px,5vw,64px);display:grid;grid-template-columns:1.15fr .85fr .9fr;align-items:start;gap:34px;background:#fff;border-top:1px solid var(--line)}
       .footer-brand{display:flex;align-items:center;gap:16px;min-width:0}
@@ -79,6 +82,7 @@
       .footer-brand strong{display:block;color:var(--navy);font-size:15px;margin-bottom:5px}
       .footer-brand p{font-size:11px;color:#7b8e9a;line-height:1.65}
       .footer-links,.footer-cs{min-width:0}
+      .footer-links{display:grid;align-content:start;gap:10px}.footer-channel-list{display:flex;gap:10px;flex-wrap:wrap}.footer-social-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:12px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff;font-size:12px;font-weight:900}
       .footer-title{display:block;color:var(--navy);font-size:11px;font-weight:900;letter-spacing:.12em;margin-bottom:10px}
       .official-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:12px;background:var(--navy);color:#fff;font-size:12px;font-weight:900}
       .footer-cs strong{display:block;color:var(--navy);font-size:22px;line-height:1.2;margin-bottom:8px}
@@ -312,6 +316,16 @@
       width:100%;
       max-width:280px;
       }
+      .contact-actions{
+      justify-content:center;
+      }
+      .footer-channel-list{
+      justify-content:center;
+      }
+      .footer-social-link{
+      width:100%;
+      max-width:280px;
+      }
       /* 모바일 하단 안전 영역 */
       .floating-kakao{
       right:16px;
@@ -373,6 +387,7 @@
           <a href="#process">PROCESS</a>
           <a href="#menu">MENU</a>
           <a class="nav-site" href="https://kp916.bver.co.kr/" target="_blank" rel="noopener noreferrer">공식 사이트 ↗</a>
+          <a class="nav-instagram" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
           <a class="nav-cta" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer">💬 카카오톡 소식 받기</a>
         </nav>
       </header>
@@ -651,7 +666,10 @@
                 <small>OCEANPERU KAKAO CHANNEL</small>
                 <h2>오션페루의 소식을<br>카카오톡으로 공유해드립니다</h2>
                 <p>새로운 입고 소식과 제품 안내, 오션페루의 업데이트를 카카오톡 채널에서 확인해 주세요.</p>
+                <div class="contact-actions">
                 <a class="kakao-btn" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer">💬 카카오톡 채널 열기</a>
+                <a class="instagram-btn" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer">📷 Instagram 보기</a>
+                </div>
                 <div class="channel-code">채널 주소 · pf.kakao.com/_DgHsG</div>
               </div>
             </div>
@@ -710,8 +728,11 @@
             </div>
           </div>
           <div class="footer-links">
-            <span class="footer-title">OFFICIAL WEBSITE</span>
-            <a class="official-link" href="https://kp916.bver.co.kr/" target="_blank" rel="noopener noreferrer">오션페루 공식 사이트 ↗</a>
+            <span class="footer-title">OFFICIAL CHANNELS</span>
+            <div class="footer-channel-list">
+              <a class="official-link" href="https://kp916.bver.co.kr/" target="_blank" rel="noopener noreferrer">공식 사이트 ↗</a>
+              <a class="footer-social-link" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            </div>
           </div>
           <div class="footer-cs">
             <span class="footer-title">CS CENTER</span>
