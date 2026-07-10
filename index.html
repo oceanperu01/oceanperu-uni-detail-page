@@ -186,7 +186,7 @@
       section{scroll-margin-top:96px}
       .hero-actions .btn,.kakao-btn,.instagram-btn,.manual-link,.official-link,.footer-social-link,.nav-cta,.nav-site,.nav-instagram,.grade-gallery-btn,.grade-thumb,.grade-dot,.floating-kakao{transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease}
       .hero-actions .btn:hover,.kakao-btn:hover,.instagram-btn:hover,.manual-link:hover,.official-link:hover,.footer-social-link:hover,.nav-cta:hover,.nav-site:hover,.nav-instagram:hover{transform:translateY(-2px)}
-      .grade-gallery-btn:hover{background:rgba(3,36,61,.96);transform:translateY(50%) scale(1.04)}
+      .grade-gallery-btn:hover{background:rgba(3,36,61,.96)}
       .grade-dot{transition:width .22s ease,background .22s ease}
       .product-main,.product-side,.mini-card,.process-card,.menu-card,.grade-copy-card,.direct-copy{will-change:transform}
       .spec-list li{align-items:center}
@@ -687,6 +687,54 @@
       .floating-kakao{right:16px!important;bottom:max(16px, env(safe-area-inset-bottom))!important;width:56px!important;height:56px!important}
       .floating-kakao img{width:32px!important;height:32px!important}
       }
+
+      /* Final responsive UI hotfix: footer channels, floating buttons, gallery controls */
+      .grade-gallery-btn{transform:none!important;transition:background .18s ease,box-shadow .18s ease!important}
+      .grade-gallery-btn:hover,.grade-gallery-btn:focus-visible{transform:none!important;background:rgba(3,36,61,.96)!important;box-shadow:0 12px 26px rgba(4,40,68,.24)!important}
+      .footer-channel-list{align-items:stretch}
+      .footer-channel-list a{min-width:0}
+      .footer-social-link img,.footer-kakao-link img{width:18px;height:18px;object-fit:contain;flex:0 0 auto}
+      .footer-social-link,.footer-kakao-link,.official-link{white-space:nowrap}
+      .floating-tools{right:22px!important;bottom:92px!important;z-index:41!important;display:grid!important;gap:10px!important;justify-items:end!important;pointer-events:none!important}
+      .floating-tools>*{pointer-events:auto!important}
+      .floating-menu-toggle{order:1!important;min-height:46px!important;max-width:calc(100vw - 44px)!important;transform:none!important}
+      .floating-menu-toggle:hover{transform:none!important}
+      .floating-menu-panel{right:0!important;bottom:58px!important;width:min(280px,calc(100vw - 36px))!important;max-height:min(70vh,520px)!important;overflow:auto!important;-webkit-overflow-scrolling:touch!important}
+      .floating-instagram{order:2!important;width:58px!important;height:58px!important;min-width:58px!important;padding:0!important;transform:none!important}
+      .floating-instagram:hover{transform:none!important}
+      .floating-kakao{right:22px!important;bottom:22px!important;width:58px!important;min-width:58px!important;height:58px!important;padding:0!important;border-radius:50%!important;transform:none!important;font-size:0!important}
+      .floating-kakao:hover{transform:none!important}
+      .floating-instagram img{width:32px!important;height:32px!important;object-fit:contain!important}
+      .floating-kakao img{width:34px!important;height:34px!important;object-fit:contain!important}
+      @media(max-width:920px){
+      footer{grid-template-columns:1fr!important;text-align:center!important}
+      .footer-brand{justify-content:center!important;flex-direction:column!important}
+      .footer-links,.footer-cs{text-align:center!important}
+      .footer-channel-list{justify-content:center!important;display:flex!important;gap:10px!important;flex-wrap:wrap!important}
+      .footer-channel-list a{flex:1 1 190px!important;max-width:280px!important}
+      .footer-copyright{grid-column:1/-1!important}
+      }
+      @media(max-width:600px){
+      .footer-channel-list{display:grid!important;grid-template-columns:1fr!important;justify-items:center!important;width:100%!important;gap:10px!important}
+      .footer-channel-list a,.official-link,.footer-social-link,.footer-kakao-link{width:100%!important;max-width:280px!important;min-height:42px!important;justify-content:center!important}
+      .floating-tools{right:14px!important;bottom:calc(max(14px, env(safe-area-inset-bottom)) + 64px)!important;gap:8px!important}
+      .floating-menu-toggle{min-height:42px!important;padding:0 12px!important;font-size:11px!important}
+      .floating-menu-toggle span{width:20px!important;height:20px!important;font-size:12px!important}
+      .floating-menu-panel{bottom:52px!important;right:0!important;width:min(286px,calc(100vw - 28px))!important;max-height:min(66vh,500px)!important;padding:12px!important}
+      .floating-menu-list a{min-height:38px!important;font-size:11.5px!important}
+      .floating-instagram{width:52px!important;min-width:52px!important;height:52px!important}
+      .floating-instagram img{width:29px!important;height:29px!important}
+      .floating-kakao{right:14px!important;bottom:max(14px, env(safe-area-inset-bottom))!important;width:52px!important;min-width:52px!important;height:52px!important}
+      .floating-kakao img{width:31px!important;height:31px!important}
+      .grade-gallery-nav{inset:auto 10px 50% 10px!important;transform:translateY(50%)!important}
+      .grade-gallery-btn{width:36px!important;height:36px!important;font-size:20px!important}
+      }
+      @media(max-width:380px){
+      .floating-menu-panel{width:calc(100vw - 24px)!important;right:-2px!important}
+      .floating-menu-toggle{padding:0 11px!important}
+      .floating-instagram,.floating-kakao{width:50px!important;min-width:50px!important;height:50px!important}
+      }
+
     </style>
     <script type="application/ld+json">
       {
