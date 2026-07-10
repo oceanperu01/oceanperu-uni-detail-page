@@ -143,7 +143,7 @@
       .footer-brand strong{display:block;color:var(--navy);font-size:15px;margin-bottom:5px}
       .footer-brand p{font-size:11px;color:#7b8e9a;line-height:1.65}
       .footer-links,.footer-cs{min-width:0}
-      .footer-links{display:grid;align-content:start;gap:10px}.footer-channel-list{display:flex;gap:10px;flex-wrap:wrap}.footer-social-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:12px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff;font-size:12px;font-weight:900}
+      .footer-links{display:grid;align-content:start;gap:10px}.footer-channel-list{display:flex;gap:10px;flex-wrap:wrap}.footer-social-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:0 15px;border-radius:12px;background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);color:#fff;font-size:12px;font-weight:900}
       .footer-title{display:block;color:var(--navy);font-size:11px;font-weight:900;letter-spacing:.12em;margin-bottom:10px}
       .official-link{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border-radius:12px;background:var(--navy);color:#fff;font-size:12px;font-weight:900}
       .footer-cs strong{display:block;color:var(--navy);font-size:22px;line-height:1.2;margin-bottom:8px}
@@ -220,6 +220,24 @@
       .floating-kakao::after{content:none!important}
       @media(max-width:600px){
       .floating-kakao{right:16px!important;bottom:max(16px, env(safe-area-inset-bottom))!important;width:56px!important;height:56px!important;min-width:0!important;padding:0!important}
+      }
+
+      /* SVG logo buttons: floating order menu → Instagram → KakaoTalk */
+      .floating-tools{bottom:154px}
+      .floating-menu-toggle{order:1}
+      .floating-menu-panel{bottom:58px}
+      .floating-instagram{order:2;background:#fff;padding:0;border:2px solid rgba(255,255,255,.78);overflow:hidden}
+      .floating-instagram img,.floating-kakao img{width:30px;height:30px;object-fit:contain}
+      .floating-kakao{display:grid;place-items:center;overflow:hidden;font-size:0!important}
+      .floating-kakao img{width:34px;height:34px}
+      .nav-cta img,.nav-instagram img,.kakao-btn img,.instagram-btn img{width:18px;height:18px;object-fit:contain;flex:0 0 auto}
+      .kakao-channel-label{display:inline-flex;align-items:center;gap:9px;color:#9eddf0;font-size:10px;font-weight:900;letter-spacing:.15em;margin-bottom:8px}
+      .kakao-channel-label img{width:22px;height:22px;object-fit:contain;flex:0 0 auto}
+      @media(max-width:600px){
+      .floating-tools{right:16px;bottom:146px}
+      .floating-instagram img{width:28px;height:28px}
+      .floating-kakao img{width:32px;height:32px}
+      .kakao-channel-label{justify-content:center}
       }
       @media(max-width:920px){
       .nav a:not(.nav-cta):not(.nav-site){display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero::before{display:none}.hero-copy{padding-bottom:25px}.hero-media{padding:10px 28px 70px;overflow:hidden}.hero-rail-stage{width:100%;min-height:430px;margin-left:0;margin-top:0}.hero-rail{width:100%;-webkit-mask-image:none;mask-image:none}.hero-rail::before{display:none}.rail-track{gap:30px;animation:heroRail 34s linear infinite}.rail-card{flex-basis:340px;aspect-ratio:4/3;height:auto;padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}.pack-photo{width:156px;background:#FFFFFF;border:2px solid rgba(22,132,182,.32)}.pack-caption{min-width:156px}.facts{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.fact:last-child{border-bottom:0}
@@ -635,6 +653,40 @@
       height:auto;
       }
       @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.menu-card{transition:none}.menu-card:hover{transform:none}.rail-track{animation:none}.grade-slide,.grade-thumb{transition:none}}
+
+      /* Final floating menu/channel controls: menu → Instagram → KakaoTalk */
+      .floating-tools{position:fixed!important;right:22px!important;bottom:92px!important;z-index:39!important;display:grid!important;gap:10px!important;justify-items:end!important;pointer-events:none!important}
+      .floating-tools>*{pointer-events:auto!important}
+      .floating-menu-toggle{order:1!important;display:inline-flex!important;align-items:center!important;gap:8px!important;min-height:46px!important;padding:0 14px!important;border:0!important;border-radius:999px!important;background:rgba(3,36,61,.96)!important;color:#fff!important;font-size:12px!important;font-weight:900!important;letter-spacing:-.02em!important;box-shadow:0 16px 34px rgba(4,40,68,.2)!important;cursor:pointer!important;backdrop-filter:blur(12px)!important}
+      .floating-menu-toggle span{display:inline-grid!important;place-items:center!important;width:22px!important;height:22px!important;border-radius:50%!important;background:rgba(255,255,255,.12)!important;font-size:13px!important}
+      .floating-menu-panel{position:absolute!important;right:0!important;bottom:58px!important;width:min(280px,calc(100vw - 36px))!important;padding:14px!important;border-radius:22px!important;background:rgba(255,255,255,.96)!important;border:1px solid rgba(19,127,174,.18)!important;box-shadow:0 26px 70px rgba(4,40,68,.22)!important;backdrop-filter:blur(18px)!important;opacity:0!important;visibility:hidden!important;transform:translateY(10px)!important;transition:opacity .22s ease,transform .22s ease,visibility .22s ease!important}
+      .floating-tools.is-open .floating-menu-panel{opacity:1!important;visibility:visible!important;transform:translateY(0)!important}
+      .floating-menu-head{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;padding:3px 4px 10px!important;border-bottom:1px solid var(--line)!important;margin-bottom:10px!important}
+      .floating-menu-head strong{color:var(--navy)!important;font-size:14px!important}
+      .floating-menu-head small{display:block!important;color:var(--muted)!important;font-size:10px!important;font-weight:800!important;letter-spacing:.06em!important}
+      .floating-menu-close{width:30px!important;height:30px!important;border:0!important;border-radius:50%!important;background:#eef8fc!important;color:var(--navy)!important;font-weight:900!important;cursor:pointer!important}
+      .floating-menu-list{display:grid!important;gap:7px!important}
+      .floating-menu-list a{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;min-height:40px!important;padding:0 12px!important;border-radius:13px!important;color:var(--navy)!important;font-size:12px!important;font-weight:900!important;background:#f7fcfe!important;border:1px solid transparent!important}
+      .floating-menu-list a::after{content:"→"!important;color:var(--orange-deep)!important;font-weight:900!important}
+      .floating-menu-list a:hover,.floating-menu-list a.is-active{background:#eef8fc!important;border-color:rgba(19,127,174,.2)!important}
+      .floating-menu-list a.is-active{box-shadow:inset 3px 0 0 var(--orange)!important}
+      .floating-instagram{order:2!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;width:58px!important;height:58px!important;border-radius:50%!important;background:#fff!important;box-shadow:0 14px 30px rgba(129,52,175,.22)!important;border:2px solid rgba(255,255,255,.78)!important;transition:transform .2s ease,box-shadow .2s ease!important;overflow:hidden!important}
+      .floating-instagram:hover{transform:translateY(-2px)!important;box-shadow:0 18px 38px rgba(129,52,175,.28)!important}
+      .floating-instagram img{width:32px!important;height:32px!important;object-fit:contain!important}
+      .floating-kakao{position:fixed!important;right:22px!important;bottom:22px!important;z-index:40!important;width:58px!important;min-width:0!important;height:58px!important;padding:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:#fee500!important;color:#241d00!important;font-size:0!important;box-shadow:0 14px 30px rgba(45,38,0,.2)!important;border:2px solid rgba(255,255,255,.75)!important;overflow:hidden!important;gap:0!important}
+      .floating-kakao img{width:34px!important;height:34px!important;object-fit:contain!important}
+      .floating-kakao::after{content:none!important}
+      .nav-cta img,.nav-instagram img,.kakao-btn img,.instagram-btn img,.footer-kakao-link img{width:18px;height:18px;object-fit:contain;flex:0 0 auto}
+      .footer-kakao-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:0 15px;border-radius:12px;background:#fee500;color:#271f00;font-size:12px;font-weight:900}
+      @media(max-width:600px){
+      .floating-tools{right:16px!important;bottom:84px!important}
+      .floating-menu-toggle{min-height:44px!important;padding:0 13px!important}
+      .floating-menu-panel{bottom:56px!important;width:min(286px,calc(100vw - 32px))!important}
+      .floating-instagram{width:56px!important;height:56px!important}
+      .floating-instagram img{width:30px!important;height:30px!important}
+      .floating-kakao{right:16px!important;bottom:max(16px, env(safe-area-inset-bottom))!important;width:56px!important;height:56px!important}
+      .floating-kakao img{width:32px!important;height:32px!important}
+      }
     </style>
     <script type="application/ld+json">
       {
@@ -717,8 +769,8 @@
           <a href="#process">PROCESS</a>
           <a href="#menu">MENU</a>
           <a class="nav-site" href="https://kp916.bver.co.kr/" target="_blank" rel="noopener noreferrer">공식 사이트 ↗</a>
-          <a class="nav-instagram" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-          <a class="nav-cta" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer">💬 카카오톡 소식 받기</a>
+          <a class="nav-instagram" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer"><img src="assets/web/instagram-logo.svg" alt="" width="18" height="18" loading="lazy">Instagram ↗</a>
+          <a class="nav-cta" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer"><img src="assets/web/kakaotalk-logo.svg" alt="" width="18" height="18" loading="lazy">카카오톡 소식 받기</a>
         </nav>
       </header>
       <main id="top">
@@ -1127,12 +1179,12 @@
                   <img src="assets/web/oceanperu-kakao-qr.svg" alt="오션페루 카카오톡 채널 QR 코드" width="600" height="600" loading="lazy">
                 </div>
                 <div class="contact-copy">
-                  <small>OCEANPERU KAKAO CHANNEL</small>
+                  <small class="kakao-channel-label"><img src="assets/web/kakaotalk-logo.svg" alt="" width="22" height="22" loading="lazy">OCEANPERU KAKAO CHANNEL</small>
                   <h2>오션페루의 소식을<br>공식 채널에서 공유해드립니다</h2>
                   <p>통관 소식, 입고 안내, 오션페루 이벤트와 운영 상황을 공식 채널에서 확인해 주세요.</p>
                   <div class="contact-actions">
-                    <a class="kakao-btn" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer">💬 카카오톡 소식 받기</a>
-                    <a class="instagram-btn" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer">📷 Instagram 보기</a>
+                    <a class="kakao-btn" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer"><img src="assets/web/kakaotalk-logo.svg" alt="" width="18" height="18" loading="lazy">카카오톡 소식 받기</a>
+                    <a class="instagram-btn" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer"><img src="assets/web/instagram-logo.svg" alt="" width="18" height="18" loading="lazy">Instagram 보기</a>
                   </div>
                   <div class="channel-code">채널 주소 · pf.kakao.com/_DgHsG<br>Instagram · @oceanperu_official</div>
                 </div>
@@ -1195,7 +1247,8 @@
               <span class="footer-title">OFFICIAL CHANNELS</span>
               <div class="footer-channel-list">
                 <a class="official-link" href="https://kp916.bver.co.kr/" target="_blank" rel="noopener noreferrer">공식 사이트 ↗</a>
-                <a class="footer-social-link" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                <a class="footer-social-link" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer"><img src="assets/web/instagram-logo.svg" alt="" width="18" height="18" loading="lazy">Instagram ↗</a>
+                <a class="footer-kakao-link" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer"><img src="assets/web/kakaotalk-logo.svg" alt="" width="18" height="18" loading="lazy">카카오톡 채널 ↗</a>
               </div>
             </div>
             <div class="footer-cs">
@@ -1208,7 +1261,34 @@
             <p class="footer-copyright">© OCEANPERU. 본 페이지의 이미지와 콘텐츠는 오션페루의 제품 안내를 위해 구성되었습니다. 제품의 실제 색상과 포장은 생산 시점 및 화면 환경에 따라 다르게 보일 수 있습니다.</p>
           </footer>
         </div>
-        <a class="floating-kakao" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener" aria-label="오션페루 카카오톡 소식 채널 열기">💬</a>
+        <div class="floating-tools" data-floating-tools>
+          <button class="floating-menu-toggle" type="button" data-floating-menu-toggle aria-expanded="false" aria-controls="floating-section-menu">
+            <span>☰</span> 메뉴
+          </button>
+          <div class="floating-menu-panel" id="floating-section-menu" role="dialog" aria-label="상세페이지 빠른 이동 메뉴">
+            <div class="floating-menu-head">
+              <div>
+                <strong>빠른 이동</strong>
+                <small>원하는 섹션으로 바로 이동</small>
+              </div>
+              <button class="floating-menu-close" type="button" data-floating-menu-close aria-label="빠른 이동 메뉴 닫기">×</button>
+            </div>
+            <nav class="floating-menu-list" aria-label="스크롤 따라가는 섹션 메뉴">
+              <a href="#price" data-floating-link>PRICE</a>
+              <a href="#direct" data-floating-link>DIRECT</a>
+              <a href="#product" data-floating-link>PRODUCT</a>
+              <a href="#process" data-floating-link>PROCESS</a>
+              <a href="#menu" data-floating-link>MENU</a>
+              <a href="#manual" data-floating-link>MANUAL</a>
+              <a href="#contact" data-floating-link>CHANNEL</a>
+              <a href="#info" data-floating-link>INFO</a>
+            </nav>
+          </div>
+          <a class="floating-instagram" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer" aria-label="오션페루 인스타그램 열기">
+            <img src="assets/web/instagram-logo.svg" alt="" width="32" height="32" loading="lazy">
+          </a>
+        </div>
+        <a class="floating-kakao" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener" aria-label="오션페루 카카오톡 소식 채널 열기"><img src="assets/web/kakaotalk-logo.svg" alt="" width="34" height="34" loading="lazy"></a>
         <script>
           const items=document.querySelectorAll('.reveal');
           if('IntersectionObserver' in window){
@@ -1245,7 +1325,38 @@
           next&&next.addEventListener('click',()=>track('grade_gallery_next',{section:'price'}));
           prev&&prev.addEventListener('click',()=>track('grade_gallery_prev',{section:'price'}));
           }
-          document.querySelectorAll('.kakao-btn,.nav-cta,.floating-kakao').forEach(el=>el.addEventListener('click',()=>{if(typeof gtag==='function'){gtag('event','kakao_news_channel_click',{link_url:el.href})}}));
+          const floatingTools=document.querySelector('[data-floating-tools]');
+          if(floatingTools){
+          const floatingToggle=floatingTools.querySelector('[data-floating-menu-toggle]');
+          const floatingClose=floatingTools.querySelector('[data-floating-menu-close]');
+          const floatingLinks=[...floatingTools.querySelectorAll('[data-floating-link]')];
+          const openFloatingMenu=()=>{
+          floatingTools.classList.add('is-open');
+          floatingToggle&&floatingToggle.setAttribute('aria-expanded','true');
+          };
+          const closeFloatingMenu=()=>{
+          floatingTools.classList.remove('is-open');
+          floatingToggle&&floatingToggle.setAttribute('aria-expanded','false');
+          };
+          floatingToggle&&floatingToggle.addEventListener('click',(event)=>{
+          event.stopPropagation();
+          floatingTools.classList.contains('is-open')?closeFloatingMenu():openFloatingMenu();
+          });
+          floatingClose&&floatingClose.addEventListener('click',closeFloatingMenu);
+          floatingLinks.forEach(link=>link.addEventListener('click',()=>{closeFloatingMenu();if(typeof gtag==='function'){gtag('event','floating_section_menu_click',{section:link.getAttribute('href')})}}));
+          document.addEventListener('click',(event)=>{if(!floatingTools.contains(event.target)){closeFloatingMenu()}});
+          document.addEventListener('keydown',(event)=>{if(event.key==='Escape'){closeFloatingMenu()}});
+          const targetSections=floatingLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
+          if('IntersectionObserver' in window && targetSections.length){
+          const navObserver=new IntersectionObserver(entries=>{
+          const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+          if(!visible)return;
+          floatingLinks.forEach(link=>link.classList.toggle('is-active',link.getAttribute('href')==='#'+visible.target.id));
+          },{rootMargin:'-38% 0px -48% 0px',threshold:[0,.2,.5,.8]});
+          targetSections.forEach(section=>navObserver.observe(section));
+          }
+          }
+          document.querySelectorAll('.kakao-btn,.nav-cta,.floating-kakao,.footer-kakao-link').forEach(el=>el.addEventListener('click',()=>{if(typeof gtag==='function'){gtag('event','kakao_news_channel_click',{link_url:el.href})}}));
           document.querySelectorAll('.instagram-btn,.nav-instagram,.footer-social-link').forEach(el=>el.addEventListener('click',()=>{if(typeof gtag==='function'){gtag('event','instagram_product_click',{link_url:el.href})}}));
           document.querySelectorAll('.manual-link').forEach(el=>el.addEventListener('click',()=>{if(typeof gtag==='function'){gtag('event','manual_link_click',{link_url:el.href})}}));
         </script>
