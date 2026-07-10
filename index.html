@@ -76,6 +76,33 @@
       .pack-caption{min-width:178px;padding:11px 15px;border-radius:999px;background:rgba(4,40,68,.94);color:#fff;text-align:center;box-shadow:0 18px 40px rgba(4,40,68,.25)}
       .pack-caption small{display:block;color:#9eddf0;font-size:9px;letter-spacing:.14em;font-weight:900;line-height:1.25}.pack-caption strong{display:block;font-size:16px;line-height:1.25;margin-top:2px}
       .facts{display:grid;grid-template-columns:repeat(3,1fr);background:var(--navy-deep);color:#fff}.fact{padding:27px 30px;border-right:1px solid rgba(255,255,255,.12);display:flex;align-items:center;gap:18px}.fact:last-child{border-right:0}.fact b{font-size:34px;line-height:1;color:#fff}.fact b span{font-size:13px;color:#94d7ec;margin-left:3px}.fact small{display:block;color:#8fd2e8;font-size:10px;font-weight:900;letter-spacing:.12em}.fact strong{font-size:15px}
+      .grade-price{background:linear-gradient(180deg,#fff 0%,#f5fbfd 100%);padding:96px clamp(22px,5vw,64px);position:relative;overflow:hidden}
+      .grade-price::before{content:"GRADE A · PRICE PROOF";position:absolute;right:clamp(18px,5vw,64px);top:28px;color:rgba(7,59,99,.055);font-size:clamp(32px,6vw,76px);font-weight:900;letter-spacing:-.055em;line-height:1;pointer-events:none}
+      .grade-price-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;align-items:stretch;position:relative;z-index:1}
+      .grade-visual-card{position:relative;min-height:500px;border-radius:32px;background:linear-gradient(145deg,#f4fafc,#e6f3f8);border:1px solid var(--line);padding:26px;display:grid;align-content:center;overflow:hidden;box-shadow:0 16px 42px rgba(7,59,99,.08)}
+      .grade-visual-card::before{content:"GRADE A";position:absolute;left:24px;top:22px;z-index:2;padding:8px 12px;border-radius:999px;background:#073b63;color:#fff;font-size:10px;font-weight:900;letter-spacing:.15em}
+      .grade-visual-card img{position:relative;z-index:1;width:108%;max-width:none;margin-left:-4%;object-fit:contain;filter:drop-shadow(0 24px 24px rgba(16,76,104,.14))}
+      .grade-photo-note{position:absolute;left:24px;right:24px;bottom:22px;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+      .grade-photo-note span{display:grid;place-items:center;min-height:40px;padding:8px 10px;border-radius:14px;background:rgba(255,255,255,.82);border:1px solid rgba(7,59,99,.09);color:var(--navy);font-size:11px;font-weight:900;text-align:center;line-height:1.25;backdrop-filter:blur(10px)}
+      .grade-copy-card{border-radius:32px;background:#fff;border:1px solid var(--line);padding:30px;box-shadow:0 16px 42px rgba(7,59,99,.06)}
+      .grade-copy-card>small{display:block;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:.16em;margin-bottom:9px}
+      .grade-copy-card h2{font-size:clamp(28px,3.6vw,44px);line-height:1.22;color:var(--navy);letter-spacing:-.055em;margin-bottom:14px}
+      .grade-copy-card>p{font-size:14px;color:var(--muted);margin-bottom:22px}
+      .grade-price-panel{padding:22px;border-radius:24px;background:linear-gradient(145deg,#073b63,#0b6f9e);color:#fff;margin-bottom:18px}
+      .grade-price-name{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+      .grade-price-name strong{font-size:17px}
+      .grade-price-name span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);font-size:11px;font-weight:900;color:#9eddf0}
+      .grade-price-row{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+      .grade-price-before{font-size:20px;font-weight:900;color:rgba(255,255,255,.54);text-decoration:line-through;text-decoration-thickness:2px}
+      .grade-price-now{font-size:clamp(46px,5vw,66px);line-height:.95;font-weight:900;letter-spacing:-.07em;color:#fff}
+      .grade-price-now span{font-size:19px;letter-spacing:-.02em;margin-left:2px}
+      .grade-proof-list{display:grid;gap:10px}
+      .grade-proof{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:15px;border-radius:18px;background:#f8fcfd;border:1px solid var(--line)}
+      .grade-proof b{width:34px;height:34px;display:grid;place-items:center;border-radius:12px;background:var(--sky);color:var(--navy);font-size:12px}
+      .grade-proof strong{display:block;color:var(--navy);font-size:14px;margin-bottom:2px}
+      .grade-proof span{display:block;color:var(--muted);font-size:12px}
+      .grade-price-note{margin-top:16px;padding:14px 16px;border-radius:16px;background:var(--cream);border:1px solid #f1dfc8;color:#755936;font-size:12px}
+      .grade-price-note strong{color:var(--orange-deep)}
       section{padding:100px clamp(22px,5vw,64px)}
       .section-head{max-width:790px;margin-bottom:44px}.section-label{display:flex;align-items:center;gap:9px;color:var(--blue);font-size:11px;font-weight:900;letter-spacing:.16em;margin-bottom:12px}.section-label::before{content:"";width:24px;height:2px;background:var(--blue)}.section-title{font-size:clamp(30px,4vw,48px);line-height:1.22;color:var(--navy);letter-spacing:-.05em;margin-bottom:15px}.section-desc{font-size:16px;color:var(--muted);max-width:700px}
       .direct{background:#fff}.direct-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}.direct-visual{background:linear-gradient(145deg,#f4fafc,#e5f1f6);border-radius:32px;padding:24px;border:1px solid var(--line);min-height:500px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.direct-visual::after{content:"PERU → KOREA";position:absolute;left:24px;bottom:18px;font-size:10px;letter-spacing:.18em;font-weight:900;color:#7896a8}.direct-visual img{width:108%;max-width:none;filter:drop-shadow(0 18px 18px rgba(12,64,91,.15))}
@@ -105,7 +132,7 @@
       .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.reveal.show{opacity:1;transform:none}
       @media(max-width:920px){
       .nav a:not(.nav-cta):not(.nav-site){display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero::before{display:none}.hero-copy{padding-bottom:25px}.hero-media{padding:10px 28px 70px;overflow:hidden}.hero-rail-stage{width:100%;min-height:430px;margin-left:0;margin-top:0}.hero-rail{width:100%;-webkit-mask-image:none;mask-image:none}.hero-rail::before{display:none}.rail-track{gap:30px;animation:heroRail 34s linear infinite}.rail-card{flex-basis:340px;aspect-ratio:4/3;height:auto;padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}.pack-photo{width:156px;background:#FFFFFF;border:2px solid rgba(22,132,182,.32)}.pack-caption{min-width:156px}.facts{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.fact:last-child{border-bottom:0}
-      .direct-grid,.product-grid,.manual-inner{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(2,1fr)}.menu-grid{grid-template-columns:1fr}.menu-photo{height:360px}.mini-gallery{grid-template-columns:1fr 1fr}.contact-card{grid-template-columns:190px 1fr}
+      .grade-price-grid{grid-template-columns:1fr}.grade-visual-card{min-height:440px}.direct-grid,.product-grid,.manual-inner{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(2,1fr)}.menu-grid{grid-template-columns:1fr}.menu-photo{height:360px}.mini-gallery{grid-template-columns:1fr 1fr}.contact-card{grid-template-columns:190px 1fr}
       }
       @media(max-width:600px){
       /* 상단 헤더 */
@@ -279,6 +306,44 @@
       .pack-caption strong{
       font-size:14px;
       }
+      .grade-price{
+      padding:68px 18px;
+      }
+      .grade-price::before{
+      display:none;
+      }
+      .grade-price-grid{
+      gap:20px;
+      }
+      .grade-visual-card{
+      min-height:0;
+      padding:18px;
+      border-radius:24px;
+      }
+      .grade-visual-card img{
+      width:100%;
+      margin-left:0;
+      }
+      .grade-photo-note{
+      position:static;
+      grid-template-columns:1fr;
+      margin-top:14px;
+      }
+      .grade-copy-card{
+      padding:22px 18px;
+      border-radius:24px;
+      }
+      .grade-price-panel{
+      padding:19px;
+      }
+      .grade-price-row{
+      align-items:flex-start;
+      flex-direction:column;
+      gap:6px;
+      }
+      .grade-price-now{
+      font-size:52px;
+      }
       /* 공통 섹션 */
       section{
       padding:68px 18px;
@@ -440,6 +505,7 @@
         </a>
         <nav class="nav" aria-label="상세페이지 메뉴">
           <a href="#direct">DIRECT</a>
+          <a href="#price">PRICE</a>
           <a href="#product">PRODUCT</a>
           <a href="#process">PROCESS</a>
           <a href="#menu">MENU</a>
@@ -545,10 +611,66 @@
             </div>
           </div>
         </div>
+        <section class="grade-price" id="price">
+          <div class="section-head reveal">
+            <p class="section-label">GRADE A · PRICE PROOF</p>
+            <h2 class="section-title">낮은 가격을 먼저 보이되,<br>품질의 근거까지 함께 보여드립니다</h2>
+            <p class="section-desc">페루 우니 Grade A의 가격은 부담을 낮추기 위한 제안입니다. 싸게 보인다는 이유로 품질 기준까지 낮춘 제품이 아니라는 점을, 제품 사진과 실제 상태 기준으로 확인할 수 있도록 구성했습니다.</p>
+          </div>
+          <div class="grade-price-grid reveal">
+            <figure class="grade-visual-card">
+              <img src="assets/web/uni-pack-front.png" alt="페루 우니 Grade A 100g 20g 5칸 제품 사진" width="1200" height="1200" loading="lazy" decoding="async">
+              <figcaption class="grade-photo-note">
+                <span>선명한 색감</span>
+                <span>100g 정량 구성</span>
+                <span>20g × 5칸</span>
+              </figcaption>
+            </figure>
+            <article class="grade-copy-card">
+              <small>PERU UNI · GRADE A</small>
+              <h2>페루 우니 Grade A<br>15,800원에서 14,900원으로</h2>
+              <p>가격만 낮게 보이는 제품이 아니라, 실제로 받아보고 먹어봤을 때 판단할 수 있는 제품이어야 합니다. 오션페루는 제품 상태를 먼저 보여주고, 그 다음 가격을 제안합니다.</p>
+              <div class="grade-price-panel" aria-label="페루 우니 Grade A 가격">
+                <div class="grade-price-name">
+                  <strong>페루 우니 Grade A</strong>
+                  <span>100g · 20g × 5칸</span>
+                </div>
+                <div class="grade-price-row">
+                  <span class="grade-price-before">15,800원</span>
+                  <strong class="grade-price-now">14,900<span>원</span></strong>
+                </div>
+              </div>
+              <div class="grade-proof-list">
+                <div class="grade-proof">
+                  <b>01</b>
+                  <div>
+                    <strong>가격을 낮춘 이유는 유통 구조입니다</strong>
+                    <span>페루 현지 자체 공장, 항공 운송, 직접 전달 구조로 불필요한 중간 단계를 줄입니다.</span>
+                  </div>
+                </div>
+                <div class="grade-proof">
+                  <b>02</b>
+                  <div>
+                    <strong>판단 기준은 가격표가 아니라 실제 상태입니다</strong>
+                    <span>색, 결, 향, 식감까지 비교했을 때 Grade A로 안내할 수 있는 제품만 보여주는 방향입니다.</span>
+                  </div>
+                </div>
+                <div class="grade-proof">
+                  <b>03</b>
+                  <div>
+                    <strong>낮은 가격은 품질을 낮춘 결과가 아닙니다</strong>
+                    <span>처음 구매하는 고객도 부담 없이 써보고, 다른 페루산 우니와 직접 비교해볼 수 있도록 제안합니다.</span>
+                  </div>
+                </div>
+              </div>
+              <p class="grade-price-note"><strong>안내</strong> · 표시 가격은 페루 우니 Grade A 기준 안내가이며, 입고 시점·수량·거래 조건에 따라 변동될 수 있습니다. 최종 견적은 상담 시 확인해 주세요.</p>
+            </article>
+          </div>
+        </section>
         <section class="direct" id="direct">
           <div class="direct-grid reveal">
             <div class="direct-visual">
-              <img src="assets/web/uni-pack-angle.png" alt="사선에서 본 오션페루 우니 5칸 트레이" width="1100" height="842" loading="lazy">
+              <img src="assets/web/uni-pack-angle.webp" alt="사선에서 본 오션페루 우니 5칸 트레이" width="1100" height="842" loading="lazy">
             </div>
             <div class="direct-copy">
               <p class="section-label">WHY DIRECT MATTERS</p>
