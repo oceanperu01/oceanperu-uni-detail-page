@@ -181,6 +181,40 @@
       .manual-card{box-shadow:0 22px 58px rgba(0,0,0,.14)}
       .contact-card{background:linear-gradient(135deg,#03243d 0%,#073b63 48%,#0b6f9e 100%)}
       .floating-kakao{border:2px solid rgba(255,255,255,.75)}
+
+      /* LIVE/MOBILE UI 점검 후 개선 적용 */
+      section{scroll-margin-top:96px}
+      .hero-actions .btn,.kakao-btn,.instagram-btn,.manual-link,.official-link,.footer-social-link,.nav-cta,.nav-site,.nav-instagram,.grade-gallery-btn,.grade-thumb,.grade-dot,.floating-kakao{transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease}
+      .hero-actions .btn:hover,.kakao-btn:hover,.instagram-btn:hover,.manual-link:hover,.official-link:hover,.footer-social-link:hover,.nav-cta:hover,.nav-site:hover,.nav-instagram:hover{transform:translateY(-2px)}
+      .grade-gallery-btn:hover{background:rgba(3,36,61,.96);transform:translateY(50%) scale(1.04)}
+      .grade-dot{transition:width .22s ease,background .22s ease}
+      .product-main,.product-side,.mini-card,.process-card,.menu-card,.grade-copy-card,.direct-copy{will-change:transform}
+      .spec-list li{align-items:center}
+      .spec-list span:first-child{font-weight:800}
+      .contact-actions a{min-height:48px;justify-content:center}
+      .floating-kakao{width:auto;min-width:58px;height:56px;padding:0 16px;border-radius:999px;font-size:13px;font-weight:900;gap:8px;color:#241d00}
+      .floating-kakao::after{content:"문의";font-size:12px;font-weight:900;letter-spacing:-.02em}
+      @media(max-width:600px){
+      section{scroll-margin-top:76px}
+      .hero-copy{padding-top:44px}
+      .hero h1{font-size:clamp(30px,8.4vw,40px)}
+      .section-title{font-size:clamp(30px,8.4vw,42px)}
+      .section-desc{font-size:15.5px;line-height:1.78}
+      .grade-slider{min-height:315px}
+      .grade-thumbs{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+      .grade-thumb{display:block;padding:7px;border-radius:14px}
+      .grade-thumb img{height:46px;margin:0 auto 5px}
+      .grade-thumb span{text-align:center;font-size:10px}
+      .grade-dots{margin-top:6px}
+      .contact-actions{display:grid;grid-template-columns:1fr;width:100%}
+      .contact-actions a{width:100%}
+      .floating-kakao{right:14px;bottom:max(14px, env(safe-area-inset-bottom));height:48px;min-width:74px;padding:0 13px}
+      }
+      @media(max-width:420px){
+      .nav-site{display:none}
+      .nav-cta{max-width:none;white-space:nowrap}
+      .topbar{align-items:center}
+      }
       @media(max-width:920px){
       .nav a:not(.nav-cta):not(.nav-site){display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero::before{display:none}.hero-copy{padding-bottom:25px}.hero-media{padding:10px 28px 70px;overflow:hidden}.hero-rail-stage{width:100%;min-height:430px;margin-left:0;margin-top:0}.hero-rail{width:100%;-webkit-mask-image:none;mask-image:none}.hero-rail::before{display:none}.rail-track{gap:30px;animation:heroRail 34s linear infinite}.rail-card{flex-basis:340px;aspect-ratio:4/3;height:auto;padding:0;background:transparent;border:0;box-shadow:none;overflow:visible}.pack-photo{width:156px;background:#FFFFFF;border:2px solid rgba(22,132,182,.32)}.pack-caption{min-width:156px}.facts{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid rgba(255,255,255,.12)}.fact:last-child{border-bottom:0}
       .grade-price-grid{grid-template-columns:1fr}.grade-gallery{min-height:520px}.direct-points{grid-template-columns:1fr}.direct-route-strip{grid-template-columns:1fr}.direct-route-strip i{display:none}.product-grid,.manual-inner{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(2,1fr)}.menu-grid{grid-template-columns:1fr}.menu-photo{height:360px}.mini-gallery{grid-template-columns:1fr 1fr}.contact-card{grid-template-columns:190px 1fr}
@@ -671,14 +705,14 @@
         </span>
         </a>
         <nav class="nav" aria-label="상세페이지 메뉴">
-          <a href="#direct">DIRECT</a>
           <a href="#price">PRICE</a>
+          <a href="#direct">DIRECT</a>
           <a href="#product">PRODUCT</a>
           <a href="#process">PROCESS</a>
           <a href="#menu">MENU</a>
           <a class="nav-site" href="https://kp916.bver.co.kr/" target="_blank" rel="noopener noreferrer">공식 사이트 ↗</a>
           <a class="nav-instagram" href="https://www.instagram.com/oceanperu_official/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-          <a class="nav-cta" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer">💬 카카오톡 소식 받기</a>
+          <a class="nav-cta" href="https://pf.kakao.com/_DgHsG" target="_blank" rel="noopener noreferrer">💬 거래 문의</a>
         </nav>
       </header>
       <main id="top">
@@ -755,7 +789,7 @@
           <div class="fact">
             <b>0단계</b>
             <div>
-              <small>🚫 MIDDLE DISTRIBUTION</small>
+              <small>MIDDLE DISTRIBUTION</small>
               <strong>중간 유통 없는 직납 구조</strong>
             </div>
           </div>
@@ -763,7 +797,7 @@
             <b>100<span>g</span>
             </b>
             <div>
-              <small>📦 ONE PACK</small>
+              <small>ONE PACK</small>
               <strong>한 팩 정량 구성</strong>
             </div>
           </div>
@@ -771,7 +805,7 @@
             <b>3<span>WAYS</span>
             </b>
             <div>
-              <small>🍣 MENU APPLICATION</small>
+              <small>MENU APPLICATION</small>
               <strong>초밥 · 덮밥 · 곁들임</strong>
             </div>
           </div>
@@ -780,13 +814,13 @@
           <div class="section-head reveal">
             <p class="section-label">GRADE A · PRICE PROOF</p>
             <h2 class="section-title">가격은 낮췄지만,<br>판단 기준은 낮추지 않았습니다</h2>
-            <p class="section-desc">오션페루는 가격만 앞세우지 않습니다. 제품의 정면, 사선, 포장 상태를 차례로 확인한 뒤 가격을 확인해주세요. 저희는 낮은 가격이 아니라, 납득할 수 있는 근거를 먼저 쌓습니다.</p>
+            <p class="section-desc">오션페루는 가격만 앞세우지 않습니다. 좌우 버튼 또는 썸네일을 눌러 제품의 정면, 사선, 포장 상태를 차례로 확인한 뒤 가격을 확인해 주세요. 낮은 가격이 아니라, 납득할 수 있는 근거를 먼저 쌓습니다.</p>
           </div>
           <div class="grade-price-grid reveal">
             <div class="grade-gallery" data-grade-gallery aria-label="페루 우니 Grade A 제품 사진 갤러리">
               <div class="grade-slider" aria-live="polite">
                 <figure class="grade-slide is-active" id="grade-slide-0" role="tabpanel" aria-hidden="false">
-                  <img src="assets/web/uni-pack-front.png" alt="페루 우니 Grade A 정면 제품 사진" width="1200" height="900" loading="lazy" decoding="async">
+                  <img src="assets/web/uni-pack-front.png" alt="페루 우니 Grade A 정면 제품 사진" width="1200" height="900" loading="eager" fetchpriority="high" decoding="async">
                   <figcaption class="grade-slide-caption">
                     <strong>FRONT · 정면 구성</strong>
                     <span>100g · 20g × 5칸 구성을 한눈에 확인</span>
@@ -844,8 +878,8 @@
                   <span>100g · 20g × 5칸</span>
                 </div>
                 <div class="grade-price-row">
-                  <span class="grade-price-before">15,800₩</span>
-                  <strong class="grade-price-now">14,900<span>₩</span>
+                  <span class="grade-price-before">15,800원</span>
+                  <strong class="grade-price-now">14,900<span>원</span>
                   </strong>
                 </div>
               </div>
@@ -920,8 +954,8 @@
             <section class="product" id="product">
               <div class="section-head reveal">
                 <p class="section-label">PRODUCT DETAIL</p>
-                <h2 class="section-title">사진으로 먼저 확인하는<br>페루산 우니의 구성</h2>
-                <p class="section-desc">선명한 색상과 결이 보이는 우니를 100g 한 팩에 담고, 사용하기 편하도록 20g씩 5칸으로 나누었습니다.</p>
+                <h2 class="section-title">매장 사용 기준으로 확인하는<br>페루산 우니의 구성</h2>
+                <p class="section-desc">100g 한 팩을 20g씩 5칸으로 소분해, 매장 메뉴 구성과 사용량 관리에 바로 적용할 수 있도록 구성했습니다.</p>
               </div>
               <div class="product-grid reveal">
                 <div class="product-main">
@@ -931,27 +965,27 @@
                   <h3 class="spec-title">💡 한눈에 보는 제품 규격</h3>
                   <ul class="spec-list">
                     <li>
-                      <span>🐚 제품명</span>
+                      <span>제품명</span>
                       <strong>페루산 성게알(우니)</strong>
                     </li>
                     <li>
-                      <span>🌎 원산지</span>
+                      <span>원산지</span>
                       <strong>페루</strong>
                     </li>
                     <li>
-                      <span>⚖️ 내용량</span>
+                      <span>내용량</span>
                       <strong>100g / 팩</strong>
                     </li>
                     <li>
-                      <span>🗂️ 트레이 구성</span>
+                      <span>트레이 구성</span>
                       <strong>20g × 5칸</strong>
                     </li>
                     <li>
-                      <span>🍽️ 대표 활용</span>
+                      <span>대표 활용</span>
                       <strong>초밥 · 덮밥 · 사시미</strong>
                     </li>
                     <li>
-                      <span>❄️ 보관</span>
+                      <span>보관</span>
                       <strong>냉장 또는 냉동</strong>
                     </li>
                   </ul>
@@ -1196,6 +1230,8 @@
           gradeGallery.addEventListener('keydown',(event)=>{
           if(event.key==='ArrowLeft'){event.preventDefault();setGradeSlide(current-1)}
           if(event.key==='ArrowRight'){event.preventDefault();setGradeSlide(current+1)}
+          if(event.key==='Home'){event.preventDefault();setGradeSlide(0)}
+          if(event.key==='End'){event.preventDefault();setGradeSlide(slides.length-1)}
           });
           const track=(eventName,eventParams={})=>{
           if(typeof gtag==='function'){gtag('event',eventName,eventParams)}
