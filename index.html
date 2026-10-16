@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
     <link rel="preload" as="image" href="assets/web/rail-product-01.webp" type="image/webp" fetchpriority="high">
-    <link rel="preload" as="image" href="assets/web/logo-round.webp">
+    <link rel="preload" as="image" href="assets/web/logo-header.webp">
     <style>
       /* [1] 폰트 위계 개선 적용 */
       /* [2] Drop Shadow 및 sticky topbar 시각 구분 개선 적용 */
@@ -996,6 +996,13 @@
       .lp .lp-offer-price b{font-size:24px}
       }
 
+      /* 헤더 로고: 가로형 로고(흰 글자) + 네이비 헤더, 크기는 컬렉션 기준(PC 44px / 모바일 34px) */
+      .lp .topbar{background:var(--navy)!important;border-bottom:0;box-shadow:none}
+      .lp .brand img.brand-logo-wide{width:auto;height:44px;max-width:176px;object-fit:contain}
+      .lp .nav{color:rgba(255,255,255,.82)}
+      .lp .nav a:hover{color:#fff}
+      .lp .nav-primary-cta{background:#fff!important;color:var(--navy)!important;border-color:#fff!important}
+      @media(max-width:639px){.lp .brand img.brand-logo-wide{height:34px;max-width:150px}}
     </style>
     <script type="application/ld+json">
 {
@@ -1069,11 +1076,7 @@
     <div class="page">
       <header class="topbar">
         <a class="brand" href="#top" aria-label="오션페루 상세페이지 상단으로">
-        <img src="assets/web/logo-round.webp" alt="오션페루 로고" width="52" height="52">
-        <span>
-        <strong>OCEANPERU</strong>
-        <small>NATURAL SEA FOOD</small>
-        </span>
+        <img class="brand-logo-wide" src="assets/web/logo-header.webp" alt="OCEANPERU NATURAL SEA FOOD" width="166" height="44">
         </a>
         <nav class="nav" aria-label="상세페이지 메뉴">
           <a href="#price">PRICE</a>
