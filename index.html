@@ -892,6 +892,109 @@
       .shop-info-list span{justify-content:flex-start;text-align:left}
       }
 
+      /* ===== LANDING RENEWAL: 오션페루몰 디자인 기준 (skin V21 oceanperu.css 토큰) ===== */
+      @font-face{font-family:"SUIT";font-weight:700;font-display:swap;src:url("https://cdn.jsdelivr.net/npm/@sun-typeface/suit@2.0.5/fonts/static/woff2/SUIT-Bold.woff2") format("woff2")}
+      @font-face{font-family:"SUIT";font-weight:800;font-display:swap;src:url("https://cdn.jsdelivr.net/npm/@sun-typeface/suit@2.0.5/fonts/static/woff2/SUIT-ExtraBold.woff2") format("woff2")}
+      :root{
+      --navy:#003B6C;--navy-deep:#002B50;--blue:#024DA1;--cyan:#00A0E3;--gold:#FAB015;
+      --orange:#F89D1C;--orange-deep:#E0850A;--sky:#eaf3fb;--sky2:#f4f8fb;--soft:#f4f8fb;--cream:#fff7e8;
+      --ink:#16212e;--muted:#5b6878;--line:#dfe6ee;--radius:16px;--shadow:0 8px 24px rgba(0,59,108,.06);
+      --lp-w:1230px;--lp-gut:max(20px,calc((100% - var(--lp-w)) / 2));
+      --lp-head:SUIT,"Pretendard Variable",Pretendard,sans-serif;
+      }
+      .lp{background:#fff!important;letter-spacing:-.01em}
+      .lp .page{width:100%;max-width:none;box-shadow:none!important;background:#fff}
+      .lp h1,.lp h2,.lp h3,.lp .section-title,.lp .distance strong,.lp .grade-price-now{font-family:var(--lp-head)}
+      /* 공통 폭 1230px */
+      .lp main>section{padding:88px var(--lp-gut)}
+      .lp .topbar{padding-left:var(--lp-gut);padding-right:var(--lp-gut);background:rgba(255,255,255,.97);box-shadow:0 1px 0 var(--line)}
+      .lp footer{padding-left:var(--lp-gut);padding-right:var(--lp-gut)}
+      /* 섹션 헤드: 작은 하늘색 영문 + 큰 네이비 국문 (쇼핑몰 .op-sec-head 규칙) */
+      .lp .section-head{max-width:820px;margin:0 0 36px;text-align:left}
+      .lp .section-label{color:var(--cyan)!important;font-family:var(--lp-head);font-size:12px;font-weight:700;letter-spacing:.16em;margin-bottom:8px}
+      .lp .section-label::before{display:none!important}
+      .lp .section-title{color:var(--navy)!important;font-size:clamp(26px,2.6vw,34px)!important;font-weight:800;line-height:1.32!important;letter-spacing:-.03em!important;margin-bottom:10px}
+      .lp .section-desc{color:var(--muted);font-size:15px;line-height:1.7}
+      /* 장식용 큰 배경 글자 제거 */
+      .lp .hero::before,.lp .grade-price::before,.lp .direct-copy::before{display:none!important;content:none!important}
+      /* 버튼: 네이비(상품) / 오렌지(전화) 알약형 */
+      .lp .btn,.lp .conversion-btn,.lp .mobile-cta-bar a,.lp .floating-official,.lp .floating-phone,.lp .manual-link,.lp .nav-site,.lp .nav-phone{border-radius:999px!important;font-weight:800}
+      .lp .btn-primary,.lp .conversion-btn-primary,.lp .nav-primary-cta,.lp .floating-official,.lp .mobile-cta-bar a:first-child{background:var(--navy)!important;color:#fff!important;box-shadow:none!important;border-color:var(--navy)!important}
+      .lp .btn-call,.lp .conversion-btn-phone,.lp .nav-phone,.lp .floating-phone,.lp .mobile-cta-bar a:last-child{background:var(--orange)!important;color:#fff!important;box-shadow:none!important}
+      .lp .btn{min-height:52px;padding:0 26px;font-size:14px}
+      /* 카드: 1px 라인 + 16px 라운드, 그림자 최소화 */
+      .lp .grade-copy-card,.lp .grade-gallery,.lp .menu-card,.lp .process-card,.lp .mini-card,.lp .product-main,.lp .product-side,.lp .official-guide-item,.lp .next-step-card,.lp .direct-point,.lp .grade-proof,.lp .info-table{border-radius:var(--radius)!important;box-shadow:none!important;border:1px solid var(--line)!important}
+      .lp .grade-price-panel{border-radius:var(--radius)!important;background:var(--navy)!important;box-shadow:none!important}
+      .lp .grade-price-now{color:#fff}
+      .lp .grade-price-before{color:rgba(255,255,255,.6)}
+      /* HERO: 오퍼 중심 */
+      .lp .hero{background:linear-gradient(180deg,#f4f8fb 0%,#eaf3fb 100%)!important;padding:0 var(--lp-gut)!important;min-height:660px}
+      .lp .hero-copy{padding:72px 24px 64px 0!important}
+      .lp .eyebrow{color:var(--cyan);font-family:var(--lp-head);font-size:12px;font-weight:700;letter-spacing:.16em}
+      .lp .eyebrow::before{display:none}
+      .lp .distance{color:var(--navy);margin-bottom:14px}
+      .lp .distance strong{font-size:clamp(64px,7.6vw,104px);text-shadow:none}
+      .lp .distance span{color:var(--cyan)}
+      .lp .hero h1{font-size:clamp(32px,3.8vw,50px);font-weight:800;text-shadow:none;margin-bottom:18px}
+      .lp .hero h1 em{color:var(--orange)}
+      .lp .hero-copy>p{font-size:15.5px;color:var(--muted);margin-bottom:22px}
+      .lp .hero-conversion-copy{display:none}
+      .lp .lp-hero-offer{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;max-width:520px;margin:4px 0 18px;padding:16px 20px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);color:var(--ink);text-decoration:none}
+      .lp .lp-offer-tag{padding:5px 10px;border-radius:999px;background:var(--gold);color:var(--navy);font-family:var(--lp-head);font-size:11px;font-weight:800;letter-spacing:.08em}
+      .lp .lp-offer-name{display:grid;font-weight:800;color:var(--navy);line-height:1.35}
+      .lp .lp-offer-name small{font-size:12px;font-weight:600;color:var(--muted)}
+      .lp .lp-offer-price{display:grid;justify-items:end;line-height:1.1}
+      .lp .lp-offer-price s{font-size:13px;color:#98a4b3}
+      .lp .lp-offer-price b{font-family:var(--lp-head);font-size:28px;font-weight:800;color:var(--orange-deep);letter-spacing:-.03em}
+      .lp .lp-offer-price i{font-style:normal;font-size:15px;margin-left:2px}
+      .lp .hero-rail::before{background:linear-gradient(90deg,#eef5fb 0%,rgba(238,245,251,.96) 26%,rgba(238,245,251,.46) 64%,rgba(238,245,251,0) 100%)!important}
+      .lp .pack-caption{background:var(--navy)!important}
+      /* 핵심 수치 띠: 네이비 단색 */
+      .lp .facts{background:var(--navy)!important;padding:0 var(--lp-gut)}
+      .lp .fact b{font-family:var(--lp-head);color:#fff}
+      .lp .fact small{color:var(--cyan)}
+      /* WHY DIRECT: 쇼핑몰 'WHY OCEANPERU' 네이비 밴드 */
+      .lp .direct{background:var(--navy)!important}
+      .lp .direct-inner{max-width:none}
+      .lp .direct-copy{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important}
+      .lp .direct-copy .section-label{color:var(--cyan)!important}
+      .lp .direct-copy blockquote{color:#fff;font-family:var(--lp-head);font-size:clamp(26px,2.8vw,36px)}
+      .lp .direct-copy blockquote em{color:var(--gold)}
+      .lp .direct-copy>p{color:#c9d8e8}
+      .lp .direct-point{background:#fff!important;border-color:transparent!important}
+      .lp .direct-route-strip{background:rgba(255,255,255,.08)!important;border-color:rgba(255,255,255,.14)!important}
+      .lp .direct-route-strip i{color:var(--cyan)}
+      /* 보관·해동: 연한 아이스 배경 */
+      .lp .manual{background:var(--sky)!important;color:var(--ink)}
+      .lp .manual .section-desc{color:var(--muted)}
+      .lp .manual .temp{background:#fff;color:var(--navy);border:1px solid var(--line)}
+      .lp .manual-card{background:#fff!important;border:1px solid var(--line)!important;box-shadow:none!important;border-radius:var(--radius)!important;color:var(--ink)}
+      .lp .manual-card strong{color:var(--navy)}
+      .lp .manual-card p{color:var(--muted)}
+      .lp .manual-link{background:var(--navy)!important;color:#fff!important}
+      .lp .official-guide,.lp .info{background:var(--sky2)}
+      .lp .official-guide-item b,.lp .grade-proof b,.lp .shop-info-list b{color:var(--cyan)}
+      .lp .process-no,.lp .menu-body small,.lp .next-step-card small,.lp .grade-copy-card>small{color:var(--cyan)!important;letter-spacing:.14em}
+      .lp .next-step-primary .conversion-btn-primary{background:#fff!important;color:var(--navy)!important;border-color:#fff!important}
+      @media(min-width:921px){
+      .lp .next-step-grid{grid-template-columns:repeat(3,1fr)!important}
+      .lp .next-step-notice{grid-column:auto!important;display:flex!important;flex-direction:column;align-items:flex-start!important;text-align:left!important}
+      .lp .next-step-notice .notice-qr{width:120px;margin:0 0 14px!important}
+      }
+      @media(max-width:920px){
+      .lp .hero{padding:0 20px!important}
+      .lp .hero-copy{padding:40px 0 20px!important}
+      .lp .facts{padding:0}
+      }
+      @media(max-width:600px){
+      .lp main>section{padding:60px 20px}
+      .lp .section-title{font-size:24px!important}
+      .lp .section-desc{font-size:14.5px}
+      .lp .lp-hero-offer{grid-template-columns:1fr auto;padding:14px 16px}
+      .lp .lp-offer-tag{grid-column:1/-1;justify-self:start}
+      .lp .lp-offer-price b{font-size:24px}
+      }
+
     </style>
     <script type="application/ld+json">
 {
@@ -957,7 +1060,7 @@
 }
     </script>
   </head>
-  <body>
+  <body class="lp">
     <!-- Google Tag Manager (noscript) -->
      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-556HX5LJ"
      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -973,10 +1076,10 @@
         </a>
         <nav class="nav" aria-label="상세페이지 메뉴">
           <a href="#price">PRICE</a>
-          <a href="#direct">DIRECT</a>
+          <a href="#menu">MENU</a>
           <a href="#product">PRODUCT</a>
           <a href="#process">PROCESS</a>
-          <a href="#menu">MENU</a>
+          <a href="#direct">DIRECT</a>
           <a class="nav-site nav-primary-cta" href="https://www.oceanperu.co.kr/shop_goods/goods_list.htm?category=01000000" data-track-event="official_site_click" data-cta-location="header">전체 상품 보기</a>
           <a class="nav-phone nav-secondary-cta" href="tel:0216881258" data-track-event="phone_click" data-cta-location="header">02-1688-1258 전화 문의</a>
         </nav>
@@ -1005,7 +1108,12 @@
               <span class="route-point">고객</span>
             </div>
             <div class="hero-conversion-copy">상품 구성, 온라인 구매, 통관 일정과 회사 정보까지 한 번에 확인할 수 있습니다.</div>
-            <div class="hero-actions hero-actions-primary">
+            <a class="lp-hero-offer" href="#price" aria-label="페루 우니 Grade A 가격 보기">
+            <span class="lp-offer-tag">GRADE A</span>
+            <span class="lp-offer-name">페루 우니 100g<small>20g × 5칸</small></span>
+            <span class="lp-offer-price"><s>15,800원</s><b>14,900<i>원</i></b></span>
+          </a>
+          <div class="hero-actions hero-actions-primary">
               <a class="btn btn-primary" href="https://oceanperu.co.kr/" data-track-event="official_site_click" data-cta-location="hero">전체 상품·구매 정보 확인</a>
               <a class="btn btn-call" href="tel:0216881258" data-track-event="phone_click" data-cta-location="hero">02-1688-1258 전화 문의</a>
             </div>
@@ -1190,81 +1298,43 @@
               </article>
             </div>
           </section>
-          <section class="direct" id="direct">
-            <div class="direct-inner reveal">
-              <div class="direct-copy">
-                <p class="section-label">WHY DIRECT MATTERS</p>
-                <blockquote>오션페루의 가격과 신선도는<br>
-                  <em>‘더 적게 거치는 구조’</em>에서 함께 만들어집니다.</blockquote>
-                  <p>중간 유통 단계가 늘어날수록 제품이 머무는 시간과 관리 지점도 늘어납니다. 오션페루는 페루 현지 자체 공장에서 선별·가공한 제품을 항공으로 운송하고, 통관 후 직접 받아 고객에게 전달하는 흐름을 기준으로 관리합니다.</p>
-                  <div class="direct-points">
-                    <div class="direct-point">
-                      <b>🏭</b>
-                      <div>
-                        <strong>페루 현지 자체 공장</strong>
-                        <span>원물 확인과 제품화의 출발점을 직접 관리합니다.</span>
-                      </div>
-                    </div>
-                    <div class="direct-point">
-                      <b>✈️</b>
-                      <div>
-                        <strong>항공 운송</strong>
-                        <span>긴 이동 과정에서 불필요한 지연을 줄입니다.</span>
-                      </div>
-                    </div>
-                    <div class="direct-point">
-                      <b>📦</b>
-                      <div>
-                        <strong>직접 전달</strong>
-                        <span>복잡한 중간 도매망 없이 고객에게 이어집니다.</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="direct-route-strip" aria-label="오션페루 직접 전달 구조">
-                    <span>PERU OWN FACTORY</span>
-                    <i>→</i>
-                    <span>AIR FREIGHT</span>
-                    <i>→</i>
-                    <span>DIRECT DELIVERY</span>
-                  </div>
-                </div>
-              </div>
-            </section>
-<section class="official-guide" id="official-site-guide">
+            <section class="menu" id="menu">
               <div class="section-head reveal">
-                <p class="section-label">SHOP & COMPANY GUIDE</p>
-                <h2 class="section-title">오션페루에서 더 확인할 수 있습니다</h2>
-                <p class="section-desc">판매 중인 상품, 온라인 구매, 통관 일정, 회사 정보까지 필요한 내용을 한곳에서 확인할 수 있습니다.</p>
+                <p class="section-label">MENU APPLICATION</p>
+                <h2 class="section-title">매장 메뉴에 바로 적용 가능한<br>3가지 활용 방식</h2>
+                <p class="section-desc">초밥·덮밥·곁들임 세 가지 방식으로 매장 메뉴 구성에 바로 적용할 수 있습니다. 트레이 단위로 소분되어 있어 손질 없이 바로 사용 가능합니다.</p>
               </div>
-              <div class="official-guide-grid reveal" aria-label="오션페루 공식 사이트에서 확인 가능한 항목">
-                <article class="official-guide-item">
-                  <b>01</b>
-                  <strong>전체 상품 종류</strong>
-                  <span>오션페루가 취급하는 상품 구성을 확인할 수 있습니다.</span>
+              <div class="menu-grid reveal">
+                <article class="menu-card">
+                  <div class="menu-photo">
+                    <img src="assets/web/menu-sushi.webp" alt="우니 초밥" width="900" height="688" loading="lazy">
+                  </div>
+                  <div class="menu-body">
+                    <small>SUSHI</small>
+                    <h3>🍣 초밥 · 군함</h3>
+                    <p>우니의 색과 형태를 한 점에 집중해 보여주는 대표적인 활용 방식입니다.</p>
+                  </div>
                 </article>
-                <article class="official-guide-item">
-                  <b>02</b>
-                  <strong>온라인 상품 구매</strong>
-                  <span>구매 가능한 상품과 판매 정보를 확인하세요.</span>
+                <article class="menu-card">
+                  <div class="menu-photo">
+                    <img src="assets/web/menu-dong.webp" alt="우니와 해산물이 올라간 덮밥" width="471" height="572" loading="lazy">
+                  </div>
+                  <div class="menu-body">
+                    <small>RICE BOWL</small>
+                    <h3>🍚 우니동 · 카이센동</h3>
+                    <p>밥과 해산물 위에 더해 한 그릇의 양감과 색감을 풍성하게 구성할 수 있습니다.</p>
+                  </div>
                 </article>
-                <article class="official-guide-item">
-                  <b>03</b>
-                  <strong>통관 일정 캘린더</strong>
-                  <span>입고와 통관 관련 일정을 확인할 수 있습니다.</span>
+                <article class="menu-card">
+                  <div class="menu-photo">
+                    <img src="assets/web/menu-sasimi.webp" alt="크래커와 육회에 우니를 곁들인 메뉴" width="471" height="572" loading="lazy">
+                  </div>
+                  <div class="menu-body">
+                    <small>PAIRING</small>
+                    <h3>🥢 사시미 · 곁들임</h3>
+                    <p>감태, 크래커, 육회, 단새우 등 다양한 재료와 조합해 메뉴의 폭을 넓힐 수 있습니다.</p>
+                  </div>
                 </article>
-                <article class="official-guide-item">
-                  <b>04</b>
-                  <strong>회사 소개</strong>
-                  <span>오션페루의 회사 정보와 운영 정보를 확인할 수 있습니다.</span>
-                </article>
-                <article class="official-guide-item">
-                  <b>05</b>
-                  <strong>회원가입</strong>
-                  <span>상품 구매와 일정 확인을 위한 회원가입이 가능합니다.</span>
-                </article>
-              </div>
-              <div class="official-guide-cta reveal">
-                <a class="conversion-btn conversion-btn-primary" href="https://oceanperu.co.kr/" data-track-event="official_site_click" data-cta-location="official_site_guide">상품·통관 일정 확인하기</a>
               </div>
             </section>
             <section class="product" id="product">
@@ -1373,43 +1443,44 @@
               </div>
               <p class="process-foot reveal">공정 사진은 제품이 원물에서 포장 단계로 이어지는 흐름을 이해하기 위한 자료입니다. 실제 작업 환경과 포장 형태는 생산 시점 및 상품 구성에 따라 달라질 수 있습니다.</p>
             </section>
-            <section class="menu" id="menu">
-              <div class="section-head reveal">
-                <p class="section-label">MENU APPLICATION</p>
-                <h2 class="section-title">매장 메뉴에 바로 적용 가능한<br>3가지 활용 방식</h2>
-                <p class="section-desc">초밥·덮밥·곁들임 세 가지 방식으로 매장 메뉴 구성에 바로 적용할 수 있습니다. 트레이 단위로 소분되어 있어 손질 없이 바로 사용 가능합니다.</p>
-              </div>
-              <div class="menu-grid reveal">
-                <article class="menu-card">
-                  <div class="menu-photo">
-                    <img src="assets/web/menu-sushi.webp" alt="우니 초밥" width="900" height="688" loading="lazy">
+          <section class="direct" id="direct">
+            <div class="direct-inner reveal">
+              <div class="direct-copy">
+                <p class="section-label">WHY DIRECT MATTERS</p>
+                <blockquote>오션페루의 가격과 신선도는<br>
+                  <em>‘더 적게 거치는 구조’</em>에서 함께 만들어집니다.</blockquote>
+                  <p>중간 유통 단계가 늘어날수록 제품이 머무는 시간과 관리 지점도 늘어납니다. 오션페루는 페루 현지 자체 공장에서 선별·가공한 제품을 항공으로 운송하고, 통관 후 직접 받아 고객에게 전달하는 흐름을 기준으로 관리합니다.</p>
+                  <div class="direct-points">
+                    <div class="direct-point">
+                      <b>🏭</b>
+                      <div>
+                        <strong>페루 현지 자체 공장</strong>
+                        <span>원물 확인과 제품화의 출발점을 직접 관리합니다.</span>
+                      </div>
+                    </div>
+                    <div class="direct-point">
+                      <b>✈️</b>
+                      <div>
+                        <strong>항공 운송</strong>
+                        <span>긴 이동 과정에서 불필요한 지연을 줄입니다.</span>
+                      </div>
+                    </div>
+                    <div class="direct-point">
+                      <b>📦</b>
+                      <div>
+                        <strong>직접 전달</strong>
+                        <span>복잡한 중간 도매망 없이 고객에게 이어집니다.</span>
+                      </div>
+                    </div>
                   </div>
-                  <div class="menu-body">
-                    <small>SUSHI</small>
-                    <h3>🍣 초밥 · 군함</h3>
-                    <p>우니의 색과 형태를 한 점에 집중해 보여주는 대표적인 활용 방식입니다.</p>
+                  <div class="direct-route-strip" aria-label="오션페루 직접 전달 구조">
+                    <span>PERU OWN FACTORY</span>
+                    <i>→</i>
+                    <span>AIR FREIGHT</span>
+                    <i>→</i>
+                    <span>DIRECT DELIVERY</span>
                   </div>
-                </article>
-                <article class="menu-card">
-                  <div class="menu-photo">
-                    <img src="assets/web/menu-dong.webp" alt="우니와 해산물이 올라간 덮밥" width="471" height="572" loading="lazy">
-                  </div>
-                  <div class="menu-body">
-                    <small>RICE BOWL</small>
-                    <h3>🍚 우니동 · 카이센동</h3>
-                    <p>밥과 해산물 위에 더해 한 그릇의 양감과 색감을 풍성하게 구성할 수 있습니다.</p>
-                  </div>
-                </article>
-                <article class="menu-card">
-                  <div class="menu-photo">
-                    <img src="assets/web/menu-sasimi.webp" alt="크래커와 육회에 우니를 곁들인 메뉴" width="471" height="572" loading="lazy">
-                  </div>
-                  <div class="menu-body">
-                    <small>PAIRING</small>
-                    <h3>🥢 사시미 · 곁들임</h3>
-                    <p>감태, 크래커, 육회, 단새우 등 다양한 재료와 조합해 메뉴의 폭을 넓힐 수 있습니다.</p>
-                  </div>
-                </article>
+                </div>
               </div>
             </section>
             <section class="manual" id="manual">
@@ -1429,6 +1500,43 @@
                   <p>제품 상태에 맞는 보관 온도와 권장 해동 방법, 피해야 할 해동법을 한 페이지에서 확인하세요.</p>
                   <a class="manual-link" href="https://manual.oceanperu.co.kr/" target="_blank" rel="noopener noreferrer" data-track-event="manual_link_click" data-cta-location="manual">메뉴얼 자세히 보기 →</a>
                 </div>
+              </div>
+            </section>
+<section class="official-guide" id="official-site-guide">
+              <div class="section-head reveal">
+                <p class="section-label">SHOP & COMPANY GUIDE</p>
+                <h2 class="section-title">오션페루에서 더 확인할 수 있습니다</h2>
+                <p class="section-desc">판매 중인 상품, 온라인 구매, 통관 일정, 회사 정보까지 필요한 내용을 한곳에서 확인할 수 있습니다.</p>
+              </div>
+              <div class="official-guide-grid reveal" aria-label="오션페루 공식 사이트에서 확인 가능한 항목">
+                <article class="official-guide-item">
+                  <b>01</b>
+                  <strong>전체 상품 종류</strong>
+                  <span>오션페루가 취급하는 상품 구성을 확인할 수 있습니다.</span>
+                </article>
+                <article class="official-guide-item">
+                  <b>02</b>
+                  <strong>온라인 상품 구매</strong>
+                  <span>구매 가능한 상품과 판매 정보를 확인하세요.</span>
+                </article>
+                <article class="official-guide-item">
+                  <b>03</b>
+                  <strong>통관 일정 캘린더</strong>
+                  <span>입고와 통관 관련 일정을 확인할 수 있습니다.</span>
+                </article>
+                <article class="official-guide-item">
+                  <b>04</b>
+                  <strong>회사 소개</strong>
+                  <span>오션페루의 회사 정보와 운영 정보를 확인할 수 있습니다.</span>
+                </article>
+                <article class="official-guide-item">
+                  <b>05</b>
+                  <strong>회원가입</strong>
+                  <span>상품 구매와 일정 확인을 위한 회원가입이 가능합니다.</span>
+                </article>
+              </div>
+              <div class="official-guide-cta reveal">
+                <a class="conversion-btn conversion-btn-primary" href="https://oceanperu.co.kr/" data-track-event="official_site_click" data-cta-location="official_site_guide">상품·통관 일정 확인하기</a>
               </div>
             </section>
             <section class="contact contact-next-step" id="contact">
@@ -1563,12 +1671,12 @@
             </div>
             <nav class="floating-menu-list" aria-label="스크롤 따라가는 섹션 메뉴">
               <a href="#price" data-floating-link>PRICE</a>
-              <a href="#direct" data-floating-link>DIRECT</a>
-              <a href="#official-site-guide" data-floating-link>OFFICIAL</a>
+              <a href="#menu" data-floating-link>MENU</a>
               <a href="#product" data-floating-link>PRODUCT</a>
               <a href="#process" data-floating-link>PROCESS</a>
-              <a href="#menu" data-floating-link>MENU</a>
+              <a href="#direct" data-floating-link>DIRECT</a>
               <a href="#manual" data-floating-link>MANUAL</a>
+              <a href="#official-site-guide" data-floating-link>OFFICIAL</a>
               <a href="#contact" data-floating-link>NEXT STEP</a>
               <a href="#info" data-floating-link>INFO</a>
             </nav>
