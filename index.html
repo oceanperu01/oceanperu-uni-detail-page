@@ -1027,6 +1027,34 @@
       .lp a[href*="instagram.com"]:not(.footer-social-link){display:inline-flex;align-items:center;min-height:40px}
       /* 푸터 인스타그램: 메뉴얼과 같은 흰 바탕 테두리 */
       .lp .footer-social-link{background:#fff!important;color:var(--navy)!important;border:1px solid var(--line)!important;box-shadow:none!important}
+      /* Mobile swipe for GRADE A photos + CTA emphasis (bounce nudge, phone icon wiggle, light running along the 상품 보기 border, press feedback) */
+      .grade-slider{touch-action:pan-y}
+      .grade-slider.is-dragging .grade-slide{transition:none!important}
+      .grade-swipe-hint{display:none}
+      @keyframes lp-swipe-hint{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}
+      @media(max-width:920px){
+      .grade-swipe-hint{position:absolute;right:12px;top:12px;z-index:4;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border-radius:999px;background:rgba(4,40,68,.82);color:#fff;font-size:11px;font-weight:800;pointer-events:none;transition:opacity .3s ease}
+      .grade-swipe-hint i{display:inline-block;font-style:normal;animation:lp-swipe-hint 1.4s ease-in-out infinite}
+      .grade-gallery.is-swiped .grade-swipe-hint{opacity:0}
+      }
+      @keyframes lp-cta-bounce{0%,22%,100%{transform:translateY(0)}5%{transform:translateY(-8px)}10%{transform:translateY(0)}14%{transform:translateY(-4px)}18%{transform:translateY(0)}}
+      @keyframes lp-phone-wiggle{0%,22%,100%{transform:rotate(0)}5%,13%{transform:rotate(-10deg)}9%,17%{transform:rotate(10deg)}}
+      @property --lp-stroke-angle{syntax:"<angle>";inherits:false;initial-value:0deg}
+      @keyframes lp-stroke-sweep{0%{--lp-stroke-angle:0deg;opacity:0}3%{opacity:1}27%{opacity:1}30%,100%{--lp-stroke-angle:360deg;opacity:0}}
+      .lp .floating-phone,.lp .mobile-cta-bar a[href^="tel:"]{position:relative;gap:7px}
+      .lp .floating-phone::before,.lp .mobile-cta-bar a[href^="tel:"]::before{content:"";width:16px;height:16px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center/contain no-repeat}
+      .lp .floating-official,.lp .mobile-cta-bar a:not([href^="tel:"]){position:relative}
+      .lp .floating-official::after,.lp .mobile-cta-bar a:not([href^="tel:"])::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:conic-gradient(from var(--lp-stroke-angle),transparent 0 70%,rgba(255,255,255,.95) 82%,rgba(140,215,245,.9) 88%,transparent 96%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:0;pointer-events:none}
+      .lp .floating-conversion a,.lp .mobile-cta-bar a,.lp .conversion-btn{transition:transform .18s ease,filter .18s ease}
+      .lp .floating-conversion a:active,.lp .mobile-cta-bar a:active,.lp .conversion-btn:active{transform:scale(.95)!important;filter:brightness(.95)}
+      @media(hover:hover){.lp .floating-conversion a:hover,.lp .conversion-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}}
+      .lp.lp-cta-nudge .floating-phone,.lp.lp-cta-nudge .mobile-cta-bar a[href^="tel:"]{animation:lp-cta-bounce 5s ease-in-out 3}
+      .lp.lp-cta-nudge .floating-phone::before,.lp.lp-cta-nudge .mobile-cta-bar a[href^="tel:"]::before{animation:lp-phone-wiggle 5s ease-in-out 3}
+      .lp.lp-cta-nudge .floating-official,.lp.lp-cta-nudge .mobile-cta-bar a:not([href^="tel:"]){animation:lp-cta-bounce 5s ease-in-out 2.5s 3}
+      .lp.lp-cta-nudge .floating-official::after,.lp.lp-cta-nudge .mobile-cta-bar a:not([href^="tel:"])::after{animation:lp-stroke-sweep 5s linear 2.5s 3}
+      @media(prefers-reduced-motion:reduce){
+      .lp .floating-phone,.lp .mobile-cta-bar a,.lp .floating-official,.lp .floating-phone::before,.lp .mobile-cta-bar a::before,.lp .floating-official::after,.lp .mobile-cta-bar a::after,.grade-swipe-hint i{animation:none!important}
+      }
     </style>
     <script type="application/ld+json">
 {
@@ -1222,7 +1250,7 @@
           <div class="section-head reveal">
             <p class="section-label">GRADE A · PRICE PROOF</p>
             <h2 class="section-title">가격은 낮췄지만,<br>판단 기준은 낮추지 않았습니다</h2>
-            <p class="section-desc">오션페루는 가격만 앞세우지 않습니다. 좌우 버튼 또는 썸네일을 눌러 제품의 정면, 사선, 포장 상태를 차례로 확인한 뒤 가격을 확인해 주세요. 낮은 가격이 아니라, 납득할 수 있는 근거를 먼저 쌓습니다.</p>
+            <p class="section-desc">오션페루는 가격만 앞세우지 않습니다. 사진을 좌우로 밀거나 버튼·썸네일을 눌러 제품의 정면, 사선, 포장 상태를 차례로 확인한 뒤 가격을 확인해 주세요. 낮은 가격이 아니라, 납득할 수 있는 근거를 먼저 쌓습니다.</p>
           </div>
           <div class="grade-price-grid reveal">
             <div class="grade-gallery" data-grade-gallery aria-label="페루 우니 Grade A 제품 사진 갤러리">
@@ -1248,6 +1276,7 @@
                     <span>납품과 보관을 고려한 패키지 상태 확인</span>
                   </figcaption>
                 </figure>
+                <span class="grade-swipe-hint" aria-hidden="true"><i>‹</i> 밀어서 넘기기 <i>›</i></span>
                 <div class="grade-gallery-nav" aria-hidden="false">
                   <button class="grade-gallery-btn" type="button" data-grade-prev aria-label="이전 제품 사진 보기">‹</button>
                   <button class="grade-gallery-btn" type="button" data-grade-next aria-label="다음 제품 사진 보기">›</button>
@@ -1753,6 +1782,33 @@
           };
           next&&next.addEventListener('click',()=>track('grade_gallery_next',{section:'price'}));
           prev&&prev.addEventListener('click',()=>track('grade_gallery_prev',{section:'price'}));
+          // Touch swipe: the active slide follows the finger; a horizontal drag over 40px changes the photo.
+          const slider=gradeGallery.querySelector('.grade-slider');
+          let startX=0,startY=0,dx=0,dragging=false,horizontal=null;
+          slider.addEventListener('touchstart',(event)=>{
+          if(event.touches.length!==1){dragging=false;return}
+          startX=event.touches[0].clientX;startY=event.touches[0].clientY;dx=0;dragging=true;horizontal=null;
+          },{passive:true});
+          slider.addEventListener('touchmove',(event)=>{
+          if(!dragging)return;
+          dx=event.touches[0].clientX-startX;
+          const dy=event.touches[0].clientY-startY;
+          if(horizontal===null&&(Math.abs(dx)>8||Math.abs(dy)>8))horizontal=Math.abs(dx)>Math.abs(dy);
+          if(horizontal){slider.classList.add('is-dragging');slides[current].style.transform=`translateX(${dx}px)`}
+          },{passive:true});
+          const endSwipe=()=>{
+          if(!dragging)return;
+          dragging=false;
+          slider.classList.remove('is-dragging');
+          slides[current].style.transform='';
+          if(horizontal&&Math.abs(dx)>40){
+          setGradeSlide(current+(dx<0?1:-1));
+          gradeGallery.classList.add('is-swiped');
+          track(dx<0?'grade_gallery_next':'grade_gallery_prev',{section:'price',method:'swipe'});
+          }
+          };
+          slider.addEventListener('touchend',endSwipe);
+          slider.addEventListener('touchcancel',endSwipe);
           }
           const floatingTools=document.querySelector('[data-floating-tools]');
           if(floatingTools){
@@ -1802,6 +1858,18 @@
         </script>
         <script>
       (function(){var hero=document.querySelector('.hero');function u(){document.body.classList.toggle('lp-past-hero',window.scrollY>(hero?hero.offsetHeight-160:400));}u();window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);})();
+      // CTA nudge: bounce the sticky 상품 보기·전화 문의 buttons after the hero, again at the price and contact sections; stop once one is tapped.
+      (function(){
+      var body=document.body,stopped=false,started=false;
+      function nudge(){if(stopped)return;body.classList.remove('lp-cta-nudge');void body.offsetWidth;body.classList.add('lp-cta-nudge');}
+      window.addEventListener('scroll',function(){if(!started&&body.classList.contains('lp-past-hero')){started=true;nudge();}},{passive:true});
+      if('IntersectionObserver' in window){
+      var seen={};
+      var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting&&started&&!seen[e.target.id]){seen[e.target.id]=true;nudge();}});},{threshold:.35});
+      ['price','contact'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
+      }
+      document.querySelectorAll('.floating-conversion a,.mobile-cta-bar a').forEach(function(a){a.addEventListener('click',function(){stopped=true;body.classList.remove('lp-cta-nudge');});});
+      })();
     </script>
   </body>
     </html>
