@@ -361,7 +361,7 @@
       /* Hero 이미지 */
       .hero-media{
       padding:8px 18px 34px;
-      overflow:hidden;
+      overflow:visible;
       }
       .hero-rail-stage{
       width:100%;
@@ -370,8 +370,9 @@
       display:block;
       }
       .hero-rail{
-      width:100%;
-      overflow-x:auto;
+      width:auto;
+      margin:0 calc(50% - 50vw);
+      overflow:hidden;
       padding-bottom:8px;
       -webkit-mask-image:none;
       mask-image:none;
@@ -386,8 +387,7 @@
       .rail-track{
       gap:18px;
       padding-left:0;
-      animation:none;
-      scroll-snap-type:x mandatory;
+      animation:heroRail 34s linear infinite;
       }
       .rail-card{
       flex-basis:88vw;
