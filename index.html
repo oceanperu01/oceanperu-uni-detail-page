@@ -1027,7 +1027,7 @@
       .lp a[href*="instagram.com"]:not(.footer-social-link){display:inline-flex;align-items:center;min-height:40px}
       /* 푸터 인스타그램: 메뉴얼과 같은 흰 바탕 테두리 */
       .lp .footer-social-link{background:#fff!important;color:var(--navy)!important;border:1px solid var(--line)!important;box-shadow:none!important}
-      /* Mobile swipe for GRADE A photos + CTA emphasis (bounce nudge, phone ring, shine, press feedback) */
+      /* Mobile swipe for GRADE A photos + CTA emphasis (bounce nudge, phone icon wiggle, light running along the 상품 보기 border, press feedback) */
       .grade-slider{touch-action:pan-y}
       .grade-slider.is-dragging .grade-slide{transition:none!important}
       .grade-swipe-hint{display:none}
@@ -1038,23 +1038,22 @@
       .grade-gallery.is-swiped .grade-swipe-hint{opacity:0}
       }
       @keyframes lp-cta-bounce{0%,22%,100%{transform:translateY(0)}5%{transform:translateY(-8px)}10%{transform:translateY(0)}14%{transform:translateY(-4px)}18%{transform:translateY(0)}}
-      @keyframes lp-cta-ring{0%{transform:scale(1);opacity:.7}22%{transform:scale(1.18,1.5);opacity:0}100%{transform:scale(1.18,1.5);opacity:0}}
-      @keyframes lp-phone-wiggle{0%,26%,100%{transform:rotate(0)}4%,12%{transform:rotate(-16deg)}8%,16%{transform:rotate(16deg)}20%{transform:rotate(0)}}
-      @keyframes lp-cta-shine{0%,8%{transform:translateX(-160%) skewX(-20deg)}28%,100%{transform:translateX(260%) skewX(-20deg)}}
+      @keyframes lp-phone-wiggle{0%,22%,100%{transform:rotate(0)}5%,13%{transform:rotate(-10deg)}9%,17%{transform:rotate(10deg)}}
+      @property --lp-stroke-angle{syntax:"<angle>";inherits:false;initial-value:0deg}
+      @keyframes lp-stroke-sweep{0%{--lp-stroke-angle:0deg;opacity:0}3%{opacity:1}27%{opacity:1}30%,100%{--lp-stroke-angle:360deg;opacity:0}}
       .lp .floating-phone,.lp .mobile-cta-bar a[href^="tel:"]{position:relative;gap:7px}
       .lp .floating-phone::before,.lp .mobile-cta-bar a[href^="tel:"]::before{content:"";width:16px;height:16px;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center/contain no-repeat}
-      .lp .floating-phone::after,.lp .mobile-cta-bar a[href^="tel:"]::after{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid var(--orange);opacity:0;pointer-events:none}
-      .lp .floating-official,.lp .mobile-cta-bar a:not([href^="tel:"]){position:relative;overflow:hidden;isolation:isolate}
-      .lp .floating-official::after,.lp .mobile-cta-bar a:not([href^="tel:"])::after{content:"";position:absolute;top:0;bottom:0;left:0;width:40%;z-index:-1;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-160%) skewX(-20deg);pointer-events:none}
+      .lp .floating-official,.lp .mobile-cta-bar a:not([href^="tel:"]){position:relative}
+      .lp .floating-official::after,.lp .mobile-cta-bar a:not([href^="tel:"])::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:conic-gradient(from var(--lp-stroke-angle),transparent 0 70%,rgba(255,255,255,.95) 82%,rgba(140,215,245,.9) 88%,transparent 96%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;opacity:0;pointer-events:none}
       .lp .floating-conversion a,.lp .mobile-cta-bar a,.lp .conversion-btn{transition:transform .18s ease,filter .18s ease}
       .lp .floating-conversion a:active,.lp .mobile-cta-bar a:active,.lp .conversion-btn:active{transform:scale(.95)!important;filter:brightness(.95)}
       @media(hover:hover){.lp .floating-conversion a:hover,.lp .conversion-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}}
       .lp.lp-cta-nudge .floating-phone,.lp.lp-cta-nudge .mobile-cta-bar a[href^="tel:"]{animation:lp-cta-bounce 5s ease-in-out 3}
       .lp.lp-cta-nudge .floating-phone::before,.lp.lp-cta-nudge .mobile-cta-bar a[href^="tel:"]::before{animation:lp-phone-wiggle 5s ease-in-out 3}
-      .lp.lp-cta-nudge .floating-phone::after,.lp.lp-cta-nudge .mobile-cta-bar a[href^="tel:"]::after{animation:lp-cta-ring 5s ease-out 3}
-      .lp.lp-cta-nudge .floating-official::after,.lp.lp-cta-nudge .mobile-cta-bar a:not([href^="tel:"])::after{animation:lp-cta-shine 5s ease-in-out 2.5s 3}
+      .lp.lp-cta-nudge .floating-official,.lp.lp-cta-nudge .mobile-cta-bar a:not([href^="tel:"]){animation:lp-cta-bounce 5s ease-in-out 2.5s 3}
+      .lp.lp-cta-nudge .floating-official::after,.lp.lp-cta-nudge .mobile-cta-bar a:not([href^="tel:"])::after{animation:lp-stroke-sweep 5s linear 2.5s 3}
       @media(prefers-reduced-motion:reduce){
-      .lp .floating-phone,.lp .mobile-cta-bar a,.lp .floating-official,.lp .floating-phone::before,.lp .mobile-cta-bar a::before,.lp .floating-phone::after,.lp .floating-official::after,.lp .mobile-cta-bar a::after,.grade-swipe-hint i{animation:none!important}
+      .lp .floating-phone,.lp .mobile-cta-bar a,.lp .floating-official,.lp .floating-phone::before,.lp .mobile-cta-bar a::before,.lp .floating-official::after,.lp .mobile-cta-bar a::after,.grade-swipe-hint i{animation:none!important}
       }
     </style>
     <script type="application/ld+json">
