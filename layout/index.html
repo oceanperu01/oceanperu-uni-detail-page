@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OCEANPERU 상세페이지 통일 레이아웃</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ===== OCEANPERU 상세페이지 통일 레이아웃 (와이어프레임) =====
+   사진 = 빗금 박스, 문구 = 회색 바/역할 라벨. 실제 사진·문구는 제품별로 채웁니다.
+   8칸 고정 순서. 상품 수(1~4)에 따라 ③ 구성 카드와 ⑧ 고시표만 바뀝니다. */
+:root{--navy:#0b3a63;--red:#d8433a;--ink:#1d2730;--gray:#5d6873;--line:#dfe4e9;--bg2:#f5f7f9;--ph1:#eef1f4;--ph2:#e3e8ed;--bar:#cfd6dd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#e9edf1;font-family:"Pretendard Variable",Pretendard,"Noto Sans KR",sans-serif;color:var(--ink);word-break:keep-all;line-height:1.45}
+.page{max-width:860px;margin:0 auto;background:#fff;overflow:hidden}
+section{position:relative;padding:56px 24px}
+@media(min-width:600px){section{padding:88px 56px}}
+.center{text-align:center}
+.alt{background:var(--bg2)}
+
+/* 자리표시 요소 */
+.ph{display:grid;place-items:center;background:repeating-linear-gradient(45deg,var(--ph1) 0 12px,var(--ph2) 12px 24px);color:#7b8894;font-size:12px;font-weight:700;text-align:center;border-radius:12px}
+.r11{aspect-ratio:1}.r34{aspect-ratio:3/4}.r45{aspect-ratio:4/5}.r43{aspect-ratio:4/3}
+.role{display:inline-block;font-size:12px;font-weight:700;color:#8793a0;border:1px dashed #b9c3cc;border-radius:6px;padding:2px 8px}
+.bar{display:block;height:12px;border-radius:6px;background:var(--bar);margin:8px auto 0}
+.eyebrow{display:block;width:96px;height:10px;border-radius:5px;background:#f0b7b2;margin:0 auto}
+.h2{display:block;height:26px;border-radius:8px;background:#aeb8c2;margin:12px auto 0;width:min(70%,420px)}
+.h2.two{box-shadow:0 34px 0 #aeb8c2;margin-bottom:52px;width:min(56%,340px)}
+.anno{position:absolute;top:12px;left:12px;z-index:5;background:rgba(17,24,32,.82);color:#fff;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px}
+.spec-note{margin-top:14px;font-size:12px;color:#8793a0}
+
+/* ① 히어로 */
+.hero{padding:0}
+.hero .ph{border-radius:0;aspect-ratio:4/5;font-size:15px}
+@media(min-width:600px){.hero .ph{aspect-ratio:1/1}}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(4,20,36,.78) 100%)}
+.hero .logo{position:absolute;top:20px;right:20px;width:56px;height:70px;border-radius:6px;background:var(--navy);display:grid;place-items:center;color:#fff;font-size:10px;font-weight:800}
+.hero .copy{position:absolute;left:24px;right:24px;bottom:32px}
+@media(min-width:600px){.hero .copy{left:56px;bottom:56px}}
+.hero .copy i{display:block;border-radius:6px;background:rgba(255,255,255,.75)}
+.hero .copy .e{width:110px;height:10px;background:#ffc9c3}
+.hero .copy .s{width:150px;height:14px;margin-top:12px}
+.hero .copy .t{width:min(60%,300px);height:44px;margin-top:8px;background:#fff}
+.hero .copy .o{width:min(70%,340px);height:16px;margin-top:14px}
+.hero .copy .lbl{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.hero .copy .lbl span{font-size:11px;color:#fff;border:1px dashed rgba(255,255,255,.6);border-radius:6px;padding:2px 7px}
+
+/* ② 핵심 스펙 */
+.spec{padding:42px 16px 22px;background:var(--navy)}
+.spec ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr)}
+.spec li{text-align:center;padding:8px 4px;color:#cfe0ee;font-size:12px}
+.spec li+li{border-left:1px solid rgba(255,255,255,.18)}
+.spec .ic{width:30px;height:30px;border-radius:50%;border:2px solid #9cc8ef;margin:0 auto 8px}
+.spec .v{display:block;height:12px;width:60%;margin:0 auto 6px;border-radius:6px;background:rgba(255,255,255,.85)}
+
+/* ③ 구성·규격 */
+.lineup{display:grid;gap:12px;margin-top:28px;text-align:left}
+.lineup[data-n="2"],.lineup[data-n="4"]{grid-template-columns:1fr 1fr}
+.lineup[data-n="3"]{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:520px){.lineup[data-n="3"]{grid-template-columns:1fr 1fr}.lineup[data-n="3"] .item:first-child{grid-column:1/-1}}
+.item{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff}
+.item .ph{border-radius:0}
+.lineup[data-n="1"] .item{display:grid;grid-template-columns:44% 1fr;align-items:center}
+.item .tx{padding:14px}
+.item .tx .bar{margin:8px 0 0}
+.item .tag{display:inline-block;margin-top:10px;width:84px;height:20px;border-radius:999px;background:#dbe8f4}
+
+/* ④ 활용법 */
+.uses{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.use{position:relative}
+.use .lb{position:absolute;left:12px;right:12px;bottom:14px;height:16px;border-radius:6px;background:rgba(255,255,255,.9)}
+
+/* ⑤ 제품 포인트 */
+.points{display:grid;gap:12px;margin-top:28px;text-align:left}
+.pt{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:var(--bg2);border-radius:14px;padding:18px}
+.pt b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900}
+.pt .bar{margin:0;width:40%}.pt .bar+.bar{width:70%;height:10px;background:#dde2e7}
+
+/* ⑥ 후기 */
+.rv{display:grid;gap:12px;margin-top:24px}
+.rv div{border:2px dashed #c9d1d8;border-radius:14px;height:96px;background:#fff;display:grid;place-items:center;color:#8a96a1;font-size:13px}
+
+/* ⑦ 보관·배송 */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px}
+.step .bar{width:70%}
+.ship{display:grid;grid-template-columns:40% 1fr;gap:16px;align-items:center;margin-top:20px;background:var(--bg2);border-radius:16px;padding:16px;text-align:left}
+.ship ul{list-style:none;font-weight:800;color:var(--navy);font-size:16px}
+.ship li+li::before{content:"+";display:block;color:var(--gray);font-weight:500}
+.note{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:18px}
+.note::before{content:"!";display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--red);color:#fff;font-weight:900;font-size:12px}
+.note .bar{margin:0;width:220px}
+
+/* ⑧ FAQ·고시 */
+.faq{margin-top:24px;border-top:2px solid var(--ink)}
+.faq div{display:flex;justify-content:space-between;align-items:center;padding:18px 4px;border-bottom:1px solid var(--line)}
+.faq div .bar{margin:0;width:46%}
+.faq div::after{content:"+";color:var(--gray);font-size:20px;line-height:1}
+.info{width:100%;border-collapse:collapse;margin-top:36px;font-size:14px}
+.info caption{text-align:left;font-weight:800;padding-bottom:10px}
+.info th,.info td{padding:11px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+.info th{text-align:left;color:var(--gray);font-weight:600;width:38%}
+.info td{text-align:right}
+.info td .bar{margin:0 0 0 auto;width:120px}
+.info td .bar+.bar{margin-top:8px}
+.foot{background:#072a49;padding:36px 24px;display:grid;place-items:center}
+.foot i{width:64px;height:80px;border-radius:6px;background:var(--navy);border:1px solid rgba(255,255,255,.2)}
+
+/* 검토용 조작 패널 (실제 페이지에는 넣지 않음) */
+.ctrl{position:sticky;top:0;z-index:20;max-width:860px;margin:0 auto;background:#0f1d2b;color:#cfe0ee;font-size:13px;padding:10px 14px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.ctrl b{color:#fff}
+.ctrl button{font:inherit;border:1px solid #3a5168;background:transparent;color:#cfe0ee;border-radius:6px;padding:3px 10px;cursor:pointer}
+.ctrl button.on{background:#fff;color:#0f1d2b;border-color:#fff;font-weight:800}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="ctrl" aria-label="검토용 조작 패널">
+  <b>통일 레이아웃</b>
+  <span>상품 수 <button data-cnt="1" class="on">1</button><button data-cnt="2">2</button><button data-cnt="3">3</button><button data-cnt="4">4</button></span>
+  <span>보관 <button data-k="냉동" class="on">냉동</button><button data-k="냉장">냉장</button><button data-k="상온">상온</button></span>
+  <span>선택 섹션 <button data-opt="points" class="on">⑤ 포인트</button><button data-opt="reviews" class="on">⑥ 후기</button><button data-opt="steps" class="on">⑦ 가공 단계</button></span>
+</div>
+
+<main class="page">
+<!-- ① 히어로 · 필수 -->
+<section class="hero">
+  <span class="anno">① 히어로 · 필수</span>
+  <div class="ph">대표 사진 · 4:5 (PC 1:1)</div>
+  <div class="shade"></div>
+  <div class="logo">LOGO</div>
+  <div class="copy">
+    <i class="e"></i><i class="s"></i><i class="t"></i><i class="o"></i>
+    <div class="lbl"><span>분류</span><span>부제(선택)</span><span>제품명</span><span>한 줄 카피 15자</span></div>
+  </div>
+</section>
+
+<!-- ② 핵심 스펙 · 필수, 3칸 고정 -->
+<section class="spec">
+  <span class="anno">② 핵심 스펙 · 3칸 고정</span>
+  <ul>
+    <li><div class="ic"></div><i class="v"></i>원산지</li>
+    <li><div class="ic"></div><i class="v"></i><span id="compLabel">구성·규격</span></li>
+    <li><div class="ic"></div><i class="v"></i>활용</li>
+  </ul>
+</section>
+
+<!-- ③ 구성·규격 · 필수 -->
+<section class="center">
+  <span class="anno" id="lineupAnno">③ 구성·규격 · 상품 1개 = 가로 카드</span>
+  <i class="eyebrow"></i><i class="h2"></i>
+  <div class="lineup" id="lineup" data-n="1"></div>
+  <p class="spec-note">카드 = 상품 사진 1:1 · 상품명 · 규격(중량 × 팩) · 보관 태그</p>
+</section>
+
+<!-- ④ 활용법 · 필수 -->
+<section class="center alt">
+  <span class="anno">④ 활용법 · 사진 1~3장</span>
+  <i class="eyebrow"></i><i class="h2"></i>
+  <div class="uses">
+    <div class="use"><div class="ph r34">활용 사진</div><i class="lb"></i></div>
+    <div class="use"><div class="ph r34">활용 사진</div><i class="lb"></i></div>
+  </div>
+</section>
+
+<!-- ⑤ 제품 포인트 · 선택 -->
+<section class="center" id="points">
+  <span class="anno">⑤ 제품 포인트 · 선택 (카드 2~3개)</span>
+  <i class="eyebrow"></i><i class="h2 two"></i>
+  <div class="ph r43" style="margin-top:24px">포인트 사진 (선택)</div>
+  <div class="points">
+    <div class="pt"><b>1</b><div><i class="bar"></i><i class="bar"></i></div></div>
+    <div class="pt"><b>2</b><div><i class="bar"></i><i class="bar"></i></div></div>
+    <div class="pt"><b>3</b><div><i class="bar"></i><i class="bar"></i></div></div>
+  </div>
+</section>
+
+<!-- ⑥ 후기 · 선택 -->
+<section class="center alt" id="reviews">
+  <span class="anno">⑥ 후기 · 선택</span>
+  <i class="eyebrow"></i><i class="h2"></i>
+  <div class="rv"><div>후기 캡처 1</div><div>후기 캡처 2</div></div>
+</section>
+
+<!-- ⑦ 보관·배송 · 공통 블록 -->
+<section class="center">
+  <span class="anno">⑦ 보관·배송 · 공통 블록</span>
+  <i class="eyebrow"></i><i class="h2"></i>
+  <div class="steps" id="steps">
+    <div class="step"><div class="ph r11">단계 1</div><i class="bar"></i></div>
+    <div class="step"><div class="ph r11">단계 2</div><i class="bar"></i></div>
+    <div class="step"><div class="ph r11">단계 3</div><i class="bar"></i></div>
+  </div>
+  <div class="ship"><div class="ph r11">포장 사진</div><ul id="pack"></ul></div>
+  <p class="note"><i class="bar"></i></p>
+</section>
+
+<!-- ⑧ FAQ·정보 고시 · 필수 -->
+<section>
+  <span class="anno">⑧ FAQ·정보 고시 · 필수</span>
+  <i class="h2"></i>
+  <div class="faq"><div><i class="bar"></i></div><div><i class="bar"></i></div><div><i class="bar"></i></div></div>
+  <table class="info"><caption>상품 정보 고시</caption><tbody id="info"></tbody></table>
+</section>
+
+<footer class="foot"><i></i></footer>
+</main>
+
+<script>
+(function(){
+  var state={n:1,k:"냉동"};
+  var PACK={"냉동":["아이스 박스","아이스 팩","드라이아이스"],"냉장":["아이스 박스","아이스 팩"],"상온":["박스 포장"]};
+  var ROWS=[["제품명",1],["원산지",0],["내용량",1],["보관방법",1],["판매원",0],["수입원",0],["원재료명 및 함량",0],["소비기한",0]];
+  function bars(c){var s="";for(var i=0;i<c;i++)s+='<i class="bar"></i>';return s;}
+  function render(){
+    var n=state.n,el=document.getElementById("lineup"),h="";
+    el.setAttribute("data-n",n);
+    for(var i=1;i<=n;i++)h+='<div class="item"><div class="ph r11">상품 '+i+' 사진</div><div class="tx"><i class="bar" style="width:70%"></i><i class="bar" style="width:50%;height:10px;background:#dde2e7"></i><i class="tag"></i></div></div>';
+    el.innerHTML=h;
+    document.getElementById("lineupAnno").textContent="③ 구성·규격 · 상품 "+n+"개 = "+(n===1?"가로 카드":n+"칸 그리드");
+    document.getElementById("compLabel").textContent=n===1?"구성·규격":n+"종 구성";
+    document.getElementById("pack").innerHTML=PACK[state.k].map(function(p){return"<li>"+p+"</li>";}).join("");
+    document.getElementById("info").innerHTML=ROWS.map(function(r){return"<tr><th>"+r[0]+"</th><td>"+bars(r[1]?n:1)+"</td></tr>";}).join("");
+  }
+  function group(attr,fn){
+    var bs=document.querySelectorAll("[data-"+attr+"]");
+    bs.forEach(function(b){b.addEventListener("click",function(){fn(b,bs);render();});});
+  }
+  group("cnt",function(b,bs){bs.forEach(function(x){x.classList.remove("on");});b.classList.add("on");state.n=+b.dataset.cnt;});
+  group("k",function(b,bs){bs.forEach(function(x){x.classList.remove("on");});b.classList.add("on");state.k=b.dataset.k;});
+  group("opt",function(b){b.classList.toggle("on");document.getElementById(b.dataset.opt).hidden=!b.classList.contains("on");});
+  render();
+})();
+</script>
+</body>
+</html>
